@@ -1,0 +1,61 @@
+/*'''''header'''''' */
+.logo {
+  width: 70px;
+  height: 70px;
+  display: block;
+  margin-top: auto;
+  border-radius: 50%;
+}
+
+body {
+  margin: 0px;
+  background-color: #ffffff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0 40px;
+  color: #ced4da;
+}
+
+.header h2 {
+  color: #495057;
+  display: inline-block;
+  padding: 20px;
+  margin: 0;
+  position: relative;
+  transition: color 0.4s ease-in-out; /*placing the transition property in the normal state ensures a smooth transition*/
+}
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ''''''hover header'''' */
+.header:hover {
+  cursor: pointer;
+}
+
+.header h2::after {
+  content: "";
+  position: absolute; /*to replace the position: relative of the div*/
+  width: 0%;
+  height: 4px;
+  background-color: black;
+  bottom: 0;
+  left: 50%;
+  transition: all 0.4s ease-in-out;
+}
+
+.header h2:hover::after {
+  width: 100%;
+  left: 0;
+  color: black;
+}
+
+.header h2:hover {
+  color: black;
+}
