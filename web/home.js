@@ -1,22 +1,24 @@
-import * as THREE from "./three.js-master/build/three.module.js";
-// import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
-let earthRadius = 6000;
+let earthRadius = 4500;
 
-const sphere = new THREE.SphereGeometry(earthRadius, 60, 60);
+// create shape
+const sphere = new THREE.SphereGeometry(earthRadius, 55, 60);
 const textureImg = new THREE.TextureLoader().load("./images/earthhd.jpg");
-// const textureBump = new THREE.TextureLoader().load("./assets/bump.jpg");
-// const textureSpec = new THREE.TextureLoader().load("./assets/spec.jpg");
+const bumpImg = new THREE.TextureLoader().load("./images/bump.jpg");
+const specImg = new THREE.TextureLoader().load("./images/spec.jpg");
 const material = new THREE.MeshBasicMaterial({
   map: textureImg,
-  //   bumpMap: textureBump,
-  //   specMap: textureSpec,
+  bumpMap: bumpImg,
+  specularMap: specImg,
 });
 var earthMesh = new THREE.Mesh(sphere, material);
 
 // create scene
 const scene = new THREE.Scene();
-scene.add(new THREE.AmbientLight(0xbbbbbb));
+scene.add(new THREE.AmbientLight(0xffffff));
+scene.background = new THREE.Color(0xf0f0f0);
 scene.add(earthMesh);
 
 // create camera
@@ -35,20 +37,41 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-//create loader
-// const loader = new GTTFLoader();
+// create controls
+const controls = new OrbitControls(camera, renderer.domElement);
+
+// create mouse event
+// let isHovered = false;
+
+// function onMouseMove(event) {
+//   if (isHovered) {
+//     const rotationSpeed = 0.002;
+//     earthMesh.rotation.y += event.movementX * rotationSpeed;
+//     earthMesh.rotation.x += event.movementY * rotationSpeed;
+//   }
+// }
+
+// function onMouseEnter(event) {
+//   isHovered = true;
+// }
+
+// function onMouseLeave(event) {
+//   isHovered = false;
+// }
+
+// renderer.domElement.addEventListener("mousemove", onMouseMove);
+// renderer.domElement.addEventListener("mouseenter", onMouseEnter);
+// renderer.domElement.addEventListener("mouseleave", onMouseLeave);
 
 function animate() {
   camera.updateProjectionMatrix();
-  renderer.render(scene, camera);
   requestAnimationFrame(animate);
+  earthMesh.rotation.x += 0.0001;
+  earthMesh.rotation.y += 0.0005;
+  earthMesh.rotation.z += 0.002;
+
+  controls.update();
+
+  renderer.render(scene, camera);
 }
-
 animate();
-
-document.addEventListener(`mousemove`, function () {
-  if (earthMesh) {
-    earthMesh.rotation.x += 0.02;
-    earthMesh.rotation.y += 0.02;
-  }
-});
