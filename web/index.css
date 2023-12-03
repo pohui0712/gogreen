@@ -1,6 +1,10 @@
 /* spacing */
-.page {
+.aboutPage {
   margin-top: 150px;
+}
+
+.benefitPage {
+  margin-top: 300px;
 }
 
 /*'''''header'''''' */
@@ -61,6 +65,7 @@ hr {
 }
 
 /* homePage */
+
 h1 {
   font-size: xx-large;
 }
@@ -121,6 +126,11 @@ button {
   background-color: rgb(9, 194, 9);
 }
 
+.aboutTitle {
+  color: blue;
+  font-size: xx-large;
+}
+
 .text-overwrite {
   background-color: whitesmoke;
   width: 95%;
@@ -139,10 +149,6 @@ button {
 }
 
 /* benefits */
-.benefitPage {
-  margin-top: 300px;
-  font-size: xx-large;
-}
 
 .grid-container {
   display: grid;
@@ -153,7 +159,6 @@ button {
 }
 
 .grid-item {
-  /* background-color: orange; */
   width: 350px;
   height: 200px;
   display: flex;
@@ -178,5 +183,6 @@ button {
 .textHeader {
   font-size: large;
   font-weight: bolder;
+  color: red;
   margin: 0;
 }
