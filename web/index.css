@@ -1,3 +1,8 @@
+/* spacing */
+.page {
+  margin-top: 150px;
+}
+
 /*'''''header'''''' */
 .logo {
   width: 70px;
@@ -5,11 +10,6 @@
   display: block;
   margin-top: auto;
   border-radius: 50%;
-}
-
-body {
-  margin: 0px;
-  background-color: #ffffff;
 }
 
 .header {
@@ -61,6 +61,122 @@ hr {
 }
 
 /* homePage */
-main {
+h1 {
+  font-size: xx-large;
+}
+
+.container {
+  display: block;
+}
+
+#model-container {
+  width: 60%;
+  margin-left: 40%;
+  margin-top: 6%;
+}
+
+#text-container {
   position: absolute;
+  text-align: center;
+  top: 25%;
+  margin-right: 60%;
+  margin-bottom: 50%;
+  margin-left: 100px;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-300px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+#text-container .animate {
+  animation: slideInLeft 1s ease-in;
+}
+
+button {
+  position: relative;
+  margin-top: 50px;
+  font-size: 18px;
+  border: 2px solid;
+  border-radius: 5px;
+}
+
+#button {
+  transition: transform 0.3s ease;
+}
+
+#button:hover {
+  transform: translateY(-10px);
+  background-color: lightgreen;
+}
+
+/* About */
+.background {
+  height: 300px;
+  background-color: rgb(9, 194, 9);
+}
+
+.text-overwrite {
+  background-color: whitesmoke;
+  width: 95%;
+  margin-top: 40px;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  height: 500px;
+  position: absolute;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.aboutParagraph {
+  width: 50%;
+  margin: 50px auto 0;
+}
+
+/* benefits */
+.benefitPage {
+  margin-top: 300px;
+  font-size: xx-large;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  gap: 100px 50px;
+  margin-top: 20px;
+}
+
+.grid-item {
+  /* background-color: orange; */
+  width: 350px;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  overflow: auto;
+  align-items: center;
+  margin: auto;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+}
+
+.textWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.textHeader {
+  font-size: large;
+  font-weight: bolder;
+  margin: 0;
 }

@@ -3,11 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>GoGreen</title>
     <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
         margin: 0;
+        background-color: white;
+        font-family: "Playpen Sans";
       }
     </style>
     <script type="importmap">
@@ -21,7 +29,7 @@
   </head>
   <body>
     <div class="header">
-      <img class="logo" src="./images/logo.jpeg" alt="logo" />
+      <img class="logo" src="./images/logo.png" alt="logo" />
       <div>
         <h2 class="about-us">About us</h2>
         <h2 class="service">Service</h2>
@@ -29,11 +37,123 @@
         <h2 class="Login">Login</h2>
       </div>
     </div>
-    <hr />
-    <main>
-      <p>hello</p>
-    </main>
-    <!-- <script src="index.js"></script> -->
+    <section class="container">
+      <canvas id="model-container"></canvas>
+      <div id="text-container">
+        <h1 class="animate">Small Effort Great Impact</h1>
+        <div class="animate">
+          Our efforts to protect the Earth are fundamental to ensuring the
+          continuity of life for ourselves and for the myriad of species that
+          share this home with us. Preserving the Earth's natural resources and
+          biodiversity is not merely an option but a necessity for sustaining
+          the ecosystems that support us. By mitigating the impacts of climate
+          change and conserving habitats, we uphold the integrity of our
+          environment and secure a healthy planet for future generations.
+        </div>
+        <br />
+        <button id="button">Learn more</button>
+      </div>
+    </section>
+    <section class="page">
+      <div>
+        <div class="background">
+          <div class="text-overwrite">
+            <h2>Who We Are</h2>
+            <h1>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam,
+              dolores.
+            </h1>
+            <p class="aboutParagraph">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam,
+              sit aliquam. Nam id nobis a vitae eius accusamus quae quibusdam
+              libero? Possimus, consectetur! Illo beatae ea, ad consequatur
+              labore eos dolorum magnam nobis fuga, expedita impedit ullam
+              quasi. Molestias quod distinctio ratione at consequatur dolore
+              obcaecati voluptate delectus rerum natus unde aliquam nisi,
+              incidunt laboriosam voluptatem harum odit cupiditate aut
+              accusantium eaque necessitatibus tenetur ab error. Libero id quod
+              voluptates. Sit quod voluptatibus minus ipsa cumque, et itaque
+              culpa officiis, aliquam quasi quos exercitationem debitis esse.
+              Odio voluptates magnam dolore, quas odit deleniti repudiandae,
+              sequi fuga perferendis exercitationem, facilis consectetur.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="page">
+      <div class="benefitPage">Benefits</div>
+      <div class="grid-container">
+        <div class="grid-item">
+          <img
+            class="icon"
+            src="./images/biodiversity.png"
+            alt="biodiversityIcon"
+          />
+          <div class="textWrap">
+            <p class="textHeader">Safeguard Biodiversity</p>
+            <p class="textContent">
+              Protecting forests and oceans helps preserve the diverse habitats
+              required by different plants and animals to thrive.
+            </p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <img class="icon" src="./images/disease.png" alt="diseaseIcon" />
+          <div class="textWrap">
+            <p class="textHeader">Prevent Disease</p>
+            <p class="textContent">
+              Protecting the environment ensure cleaner air and water to reduce
+              the risk of illnesses.
+            </p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <img
+            class="icon"
+            src="./images/climateChange.webp"
+            alt="climateIcon"
+          />
+          <div class="textWrap">
+            <p class="textHeader">Mitigate Climate Change</p>
+            <p class="textContent">
+              Reduces carbon emissions, aiding in combating global warming.
+            </p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <img class="icon" src="./images/city.png" alt="cityIcon" />
+          <div class="textWrap">
+            <p class="textHeader">Sustainable Development</p>
+            <p class="textContent">
+              Ensures the availability of natural resources for future
+              generations.
+            </p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <img class="icon" src="./images/economy.png" alt="economyIcon" />
+          <div class="textWrap">
+            <p class="textHeader">Boost Economy</p>
+            <p class="textContent">
+              Creates job opportunities in conservation, renewable energy, and
+              eco-friendly sectors.
+            </p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <img class="icon" src="./images/life.png" alt="lifeIcon" />
+          <div class="textWrap">
+            <p class="textHeader">Life Quality</p>
+            <p class="textContent">
+              Provides recreational spaces and natural landscapes for leisure
+              and mental well-being.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script type="module" src="home.js"></script>
   </body>
 </html>
