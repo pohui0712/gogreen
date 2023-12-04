@@ -11,10 +11,13 @@
       href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <style>
       body {
         margin: 0;
-        background-color: white;
         font-family: "Playpen Sans";
       }
     </style>
@@ -28,6 +31,76 @@
     </script>
   </head>
   <body>
+    <header>
+      <nav class="navbar">
+        <a href="#" class="logo">
+          <img src="./images/logo.png" alt="logo" />
+          <h2>GoGreen</h2>
+        </a>
+        <ul class="links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Donate</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <button id="login-btn">LOG IN</button>
+      </nav>
+    </header>
+
+    <div id="login-page">
+      <div class="container" id="container">
+        <div class="form-container sign-up-container">
+          <form action="#">
+            <i class="fa-solid fa-xmark" id="close-btn-sign-up"></i>
+            <h1>Create Account</h1>
+            <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social"
+                ><i class="fab fa-google-plus-g"></i
+              ></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your email for registration</span>
+            <input type="text" placeholder="name" />
+            <input type="email" placeholder="Email" />
+            <input type="text" placeholder="Password" />
+            <button>Sign Up</button>
+          </form>
+        </div>
+        <div class="form-container sign-in-container">
+          <form action="#">
+            <h1>Sign in</h1>
+            <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social"
+                ><i class="fab fa-google-plus-g"></i
+              ></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your account</span>
+            <input type="email" placeholder="Email" />
+            <input type="text" placeholder="Password" />
+            <button>Sign In</button>
+          </form>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1>Welcome Back</h1>
+              <p>
+                To keep connected with us please login with your personal info
+              </p>
+              <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <i class="fa-solid fa-xmark" id="close-btn-overlay"></i>
+              <h1>Hello, Friend!</h1>
+              <p>Enter your personal details and start journey with us</p>
+              <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <section class="home-container">
       <canvas id="model-container"></canvas>
       <div id="text-container">
@@ -177,5 +250,6 @@
     </section>
     <section class="contactPage"><h1>Contact Us</h1></section>
     <script type="module" src="earthModel.js"></script>
+    <script type="module" src="loginPage.js"></script>
   </body>
 </html>
