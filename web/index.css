@@ -121,7 +121,7 @@ header {
 /* --login page-- */
 
 #login-page {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   left: 25%;
   display: flex;
