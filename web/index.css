@@ -389,7 +389,7 @@ h1 {
   animation: slideInLeft 1s ease-in;
 }
 
-.home-container .button {
+.home-container button {
   position: relative;
   margin-top: 50px;
   font-size: 18px;
