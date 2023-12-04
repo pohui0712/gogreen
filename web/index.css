@@ -174,7 +174,7 @@ header {
 
 #login-page button {
   border-radius: 20px;
-  border: 1px solid #d6ccc2;
+  /* border: 1px solid #d6ccc2; */
   background-color: #d6ccc2;
   color: #ffffff;
   font-size: 12px;
@@ -193,7 +193,7 @@ header {
   outline: none;
 }
 
-button.ghost {
+.overlay-container .ghost {
   background-color: transparent;
   border-color: #ffffff;
 }
