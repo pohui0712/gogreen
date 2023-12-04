@@ -121,7 +121,7 @@ header {
 /* --login page-- */
 
 #login-page {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   left: 25%;
   display: flex;
@@ -174,7 +174,7 @@ header {
 
 #login-page button {
   border-radius: 20px;
-  /* border: 1px solid #d6ccc2; */
+  border: 1px solid #d6ccc2;
   background-color: #d6ccc2;
   color: #ffffff;
   font-size: 12px;
@@ -193,7 +193,7 @@ header {
   outline: none;
 }
 
-.overlay-container .ghost {
+#login-page button.overlay-btn {
   background-color: transparent;
   border-color: #ffffff;
 }
