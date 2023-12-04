@@ -355,13 +355,13 @@ h1 {
 #model-container {
   width: 60%;
   margin-left: 40%;
-  margin-top: 6%;
+  margin-top: 12%;
 }
 
 #text-container {
   position: absolute;
   text-align: center;
-  top: 25%;
+  top: 35%;
   margin-right: 60%;
   margin-bottom: 50%;
   margin-left: 100px;
@@ -381,7 +381,7 @@ h1 {
   animation: slideInLeft 1s ease-in;
 }
 
-button {
+.home-container button {
   position: relative;
   margin-top: 50px;
   font-size: 18px;
