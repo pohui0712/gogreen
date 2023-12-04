@@ -98,6 +98,14 @@ header {
   transition: 0.15s ease;
 }
 
+.navbar #login-btn:active {
+  transform: scale(0.95);
+}
+
+.navbar #login-btn:focus {
+  outline: none;
+}
+
 .navbar .links a::after {
   display: block;
   content: " ";
@@ -381,7 +389,7 @@ h1 {
   animation: slideInLeft 1s ease-in;
 }
 
-.home-container button {
+.home-container .button {
   position: relative;
   margin-top: 50px;
   font-size: 18px;
