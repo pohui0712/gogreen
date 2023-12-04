@@ -7,12 +7,12 @@
   margin-top: 350px;
 }
 
-.servicePage {
+.spacePage {
   margin-top: 100px;
 }
 
-.contactPage {
-  margin-top: 100px;
+.h1Space {
+  margin-left: 20px;
 }
 
 /* header */
@@ -395,6 +395,7 @@ h1 {
   font-size: 18px;
   border: 2px solid;
   border-radius: 5px;
+  width: 100px;
 }
 
 #button {
@@ -518,4 +519,47 @@ img {
 
 .card:hover .card-back {
   transform: rotateY(0deg);
+}
+
+/* contactPage */
+
+.all {
+  display: flex;
+  margin-left: 100px;
+  margin-top: 30px;
+}
+
+.contact-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container input,
+.contact-container textarea {
+  margin-bottom: 10px;
+  padding: 15px;
+  width: 100%;
+}
+
+.contact-container button {
+  font-size: 18px;
+  border: 2px solid;
+  border-radius: 5px;
+  width: 100px;
+}
+
+.contact-container #submitButton:hover {
+  background-color: rgb(223, 223, 15);
+}
+
+.image-container {
+  margin-left: 50px;
+  margin-right: 100px;
+}
+
+.image-container img {
+  width: 500px;
+  height: 400px;
+  border-radius: 20px;
 }
