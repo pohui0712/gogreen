@@ -382,6 +382,7 @@ form {
 
 h1 {
   font-size: xx-large;
+  padding: 20px;
 }
 
 .home-container {
@@ -398,7 +399,7 @@ h1 {
 #text-container {
   position: absolute;
   text-align: center;
-  top: 35%;
+  top: 30%;
   margin-right: 60%;
   margin-bottom: 50%;
   margin-left: 100px;
