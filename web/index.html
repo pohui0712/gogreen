@@ -32,13 +32,14 @@
   </head>
   <body>
     <header>
-      <nav class="navbar">
+      <nav class="navbar" id="blur-header">
         <a href="#" class="logo">
           <img src="./images/logo.png" alt="logo" />
           <h2>GoGreen</h2>
         </a>
         <ul class="links">
           <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
           <li><a href="#">Donate</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
@@ -101,7 +102,7 @@
         </div>
       </div>
     </div>
-    <section class="home-container">
+    <section class="home-container" id="blur-homeContainer">
       <canvas id="model-container"></canvas>
       <div id="text-container">
         <h1 class="animate">Small Effort Great Impact</h1>
@@ -118,7 +119,7 @@
         <button id="button">Learn more</button>
       </div>
     </section>
-    <section class="aboutPage">
+    <section class="aboutPage" id="blur-aboutPage">
       <div>
         <div class="background">
           <div class="text-overwrite">
@@ -144,7 +145,7 @@
         </div>
       </div>
     </section>
-    <section class="benefitPage">
+    <section class="benefitPage" id="blur-benefitPage">
       <div class="grid-container">
         <div class="grid-item">
           <img
@@ -215,7 +216,7 @@
         </div>
       </div>
     </section>
-    <section class="spacePage">
+    <section class="spacePage" id="blur-program">
       <h1 class="h1Space">Previous Program</h1>
       <div class="card-container">
         <div class="card">
@@ -248,7 +249,7 @@
         </div>
       </div>
     </section>
-    <section class="spacePage">
+    <section class="spacePage" id="blur-contact">
       <h1 class="h1Space">GET IN TOUCH!</h1>
       <div class="all">
         <div class="contact-container">
@@ -267,7 +268,7 @@
         </div>
       </div>
     </section>
-    <section class="spacePage">
+    <section class="spacePage" id="blur-footer">
       <div class="footer-container">
         <div class="left-footer">
           <img src="./images/logo.png" alt="logo" />
@@ -288,5 +289,6 @@
     </section>
     <script type="module" src="earthModel.js"></script>
     <script type="module" src="loginPage.js"></script>
+    <script type="module" src="blurbackground.js"></script>
   </body>
 </html>

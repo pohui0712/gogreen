@@ -1,14 +1,17 @@
 /* spacing */
 .aboutPage {
   margin-top: 50px;
+  transition: 0.5s;
 }
 
 .benefitPage {
   margin-top: 350px;
+  transition: 0.5s;
 }
 
 .spacePage {
   margin-top: 100px;
+  transition: 0.5s;
 }
 
 .h1Space {
@@ -46,6 +49,7 @@ header {
   /* padding: 5px 0; */
   max-width: 1200px;
   margin: 0 auto;
+  transition: 0.5s;
 }
 
 .navbar .logo {
@@ -116,6 +120,20 @@ header {
 
 .navbar .links a:hover::after {
   transform: scaleX(1);
+}
+
+/* --Blur Backgournd Effect */
+
+.navbar#blur-header.active,
+.home-container#blur-homeContainer.active,
+.aboutPage#blur-aboutPage.active,
+.benefitPage#blur-benefitPage.active,
+.spacePage#blur-program.active,
+.spacePage#blur-contact.active,
+.spacePage#blur-footer.active {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
 }
 
 /* --login page-- */
@@ -358,6 +376,7 @@ h1 {
 
 .home-container {
   height: 700px;
+  transition: 0.5s;
 }
 
 #model-container {
