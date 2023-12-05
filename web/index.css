@@ -551,6 +551,21 @@ img {
   transform: rotateY(0deg);
 }
 
+.program-title {
+  font-weight: bolder;
+  text-align: center;
+  padding: 10px;
+}
+
+.program-explain {
+  font-family: "Libre Franklin";
+  font-weight: 100;
+  margin-top: 15px;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0px 10px;
+}
+
 /* contactPage */
 
 .all {
