@@ -26,6 +26,9 @@ function toggle(){
 
     var loginPage = document.getElementById('login-page')
     loginPage.classList.toggle('active')
+
+    var nonScroll = document.getElementById('non-scroll')
+    nonScroll.classList.toggle('active')
 }
 
 loginBtn.addEventListener('click', () =>{
