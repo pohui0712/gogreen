@@ -18,6 +18,11 @@
   margin-left: 20px;
 }
 
+/* smooth */
+html {
+  scroll-behavior: smooth;
+}
+
 /* header */
 * {
   margin: 0;
