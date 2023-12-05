@@ -31,6 +31,7 @@ body {
   width: 100%;
   /* background: url("/image/irelandstreet.jpg") center/cover no-repeat; */
   background-color: honeydew;
+  /* overflow-y: hidden; */
 }
 
 header {
@@ -134,6 +135,10 @@ header {
   filter: blur(5px);
   pointer-events: none;
   user-select: none;
+}
+
+body#non-scroll.active {
+  overflow-y: hidden;
 }
 
 /* --login page-- */
