@@ -29,6 +29,9 @@
         }
       }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
   </head>
   <body id="non-scroll">
     <header>
@@ -217,7 +220,13 @@
       </div>
     </section>
     <section class="spacePage" id="blur-program">
-      <h1 class="h1Space">Previous Program</h1>
+      <div class="h1Space">
+        <h1 class="big-program-text">Previous Program</h1>
+        <p class="small-program-text">
+          We make every efforts to conduct more community services in order to
+          convey importance of protecting environment to the world
+        </p>
+      </div>
       <div class="card-container">
         <div class="card">
           <img class="card-front" src="./images/schoolCampaign.jpeg" />
@@ -312,5 +321,6 @@
     <script type="module" src="./javascript/earthModel.js"></script>
     <script type="module" src="./javascript/blurbackground.js"></script>
     <script type="module" src="./javascript/loginPage.js"></script>
+    <script type="module" src="./javascript/animation.js"></script>
   </body>
 </html>
