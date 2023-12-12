@@ -403,12 +403,12 @@ h1 {
 }
 
 .home-container {
-  margin-top: 10%;
   transition: 0.5s;
   display: flex;
 }
 
 #model-container {
+  margin-top: 10%;
   display: flex;
   flex: 1;
   width: 700px;
@@ -416,6 +416,7 @@ h1 {
 }
 
 #text-container {
+  margin-top: 10%;
   display: flex;
   flex-basis: 550px;
   flex-direction: column;
