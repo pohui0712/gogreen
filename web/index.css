@@ -1,6 +1,7 @@
 /* spacing */
-.aboutPage {
-  margin-top: 50px;
+.aboutPage,
+.spacePage {
+  margin-top: 100px;
   transition: 0.5s;
 }
 
@@ -9,18 +10,34 @@
   transition: 0.5s;
 }
 
-.spacePage {
-  margin-top: 100px;
-  transition: 0.5s;
-}
-
 .h1Space {
   margin-left: 20px;
+  text-align: center;
 }
 
 /* smooth */
 html {
   scroll-behavior: smooth;
+}
+
+/* slide out animation */
+
+.slide-out {
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: transform 2s ease;
+  filter: blur(10px);
+}
+
+.slide-out.show {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+@media (reduced-motion) {
+  .slide-out {
+    transition: none;
+  }
 }
 
 /* header */
@@ -386,23 +403,24 @@ h1 {
 }
 
 .home-container {
-  height: 700px;
   transition: 0.5s;
+  display: flex;
 }
 
 #model-container {
-  width: 60%;
-  margin-left: 40%;
-  margin-top: 12%;
+  margin-top: 10%;
+  display: flex;
+  flex: 1;
+  width: 700px;
+  position: relative;
 }
 
 #text-container {
-  position: absolute;
-  text-align: center;
-  top: 30%;
-  margin-right: 60%;
-  margin-bottom: 50%;
-  margin-left: 100px;
+  margin-top: 10%;
+  display: flex;
+  flex-basis: 550px;
+  flex-direction: column;
+  margin-left: 80px;
 }
 
 @keyframes slideInLeft {
@@ -440,7 +458,7 @@ h1 {
 /* About */
 .background {
   height: 300px;
-  background-color: rgb(9, 194, 9);
+  background-color: rgba(14, 135, 87, 0.463);
 }
 
 .aboutTitle {
@@ -558,6 +576,13 @@ img {
   padding: 10px;
 }
 
+.big-program-text {
+}
+
+.small-program-text {
+  margin-left: 20px;
+}
+
 .program-explain {
   font-family: "Libre Franklin";
   font-weight: 100;
@@ -589,14 +614,16 @@ img {
 }
 
 .contact-container button {
-  font-size: 18px;
+  font-size: 20px;
   border: 2px solid;
   border-radius: 5px;
   width: 100px;
+  margin-top: 10px;
 }
 
 .contact-container #submitButton:hover {
-  background-color: rgb(223, 223, 15);
+  background-color: rgba(223, 133, 15, 0.153);
+  color: lightcoral;
 }
 
 .image-container {
