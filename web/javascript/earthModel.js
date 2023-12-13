@@ -20,10 +20,10 @@ scene.add(earthMesh);
 
 // camera
 const camera = new THREE.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  15000
+  75, //field of view(value in degrees)
+  window.innerWidth / window.innerHeight, //aspect ratio of sence
+  0.1, //near clipping plane
+  15000 //far clipping plane
 );
 camera.updateProjectionMatrix();
 
