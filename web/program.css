@@ -1,0 +1,43 @@
+/* smooth */
+html {
+  scroll-behavior: smooth;
+}
+
+/* header */
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  /* background: linear-gradient(#fefae0, #ccd5ae); */
+}
+
+img {
+  width: 500px;
+  height: 300px;
+  border-radius: 30px;
+}
+
+p {
+  padding-top: 20px;
+}
+.program {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.program-content {
+  width: 40%;
+  margin: 50px;
+  text-align: center;
+}
+
+.intro {
+  height: 100vh;
+}
