@@ -42,6 +42,148 @@
       </div>
     </div>
 
-    <div class="description"></div>
+    <div class="description">
+      <h1 id="first-phase">We provide the platform,</h1>
+      <h1 id="second-phase">you contribute your efforts.</h1>
+      <div id="quote">
+        <!-- <img src="images/treePlanting.jpg" alt="" /> -->
+        <p>
+          There is sufficiency in the world for man's need but not for man's
+          greed.
+        </p>
+      </div>
+    </div>
+
+    <div class="description-donation">
+      <p>about donate</p>
+    </div>
+
+    <div class="last">
+      <div class="bg"></div>
+      <div class="section">
+        <div class="section-img">
+          <div
+            class="section-img-inner"
+            style="background-image: url(images/kidsRecyclingProgram.png)"
+          ></div>
+        </div>
+        <div class="section-body">
+          <div class="section-text">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure
+              aspernatur molestiae architecto ipsa quidem, eum velit illo
+              obcaecati animi suscipit reiciendis adipisci ab itaque, rem
+              tenetur, vero unde pariatur laboriosam hic necessitatibus. Eos
+              cupiditate alias quae nostrum sunt aliquam totam error. Earum,
+              exercitationem veritatis! Dolorem iste excepturi laudantium quidem
+              aperiam.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-img">
+          <div
+            class="section-img-inner"
+            style="background-image: url(images/programGridCleanRubbish.jpg)"
+          ></div>
+        </div>
+        <div class="section-body">
+          <div class="section-text">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+              distinctio ullam id similique quo earum. Porro commodi quaerat
+              aliquam eligendi.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptatibus autem et vero magnam natus alias pariatur corrupti
+              veniam provident consequuntur deleniti ratione, voluptas dicta
+              minima unde suscipit incidunt ipsam illum.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-img">
+          <div
+            class="section-img-inner"
+            style="background-image: url(images/communityCleaning.png)"
+          ></div>
+        </div>
+        <div class="section-body">
+          <div class="section-text">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+              fuga alias, non blanditiis aliquid eaque!
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Dignissimos, quis maiores et vel quasi dolor officiis nihil vitae
+              itaque culpa commodi ipsa at aut. Perspiciatis impedit voluptate
+              illo cum incidunt.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-img">
+          <div
+            class="section-img-inner"
+            style="background-image: url(images/beachCleaning.png)"
+          ></div>
+        </div>
+        <div class="section-body">
+          <div class="section-text">
+            <h2>Lorem ipsum dolor sit.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+              quia harum possimus consequatur enim quod obcaecati. Impedit nemo
+              debitis vitae provident soluta architecto quae rem neque earum,
+              optio cupiditate nisi nam? Vel adipisci doloremque officiis ab
+              praesentium placeat, consequuntur obcaecati mollitia iusto nisi
+              ipsam molestiae dolorum? Voluptatum aliquid autem blanditiis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Cache DOM elements
+      const windowElement = window,
+        bodyElement = document.body,
+        sectionElements = document.querySelectorAll(".section");
+
+      // Function to handle scroll events
+      function handleScroll() {
+        const scroll = windowElement.scrollY + windowElement.innerHeight / 3;
+
+        // Find the section in the middle third of the viewport
+        sectionElements.forEach(function (section) {
+          const sectionTop = section.offsetTop,
+            sectionBottom = sectionTop + section.offsetHeight;
+
+          if (sectionTop <= scroll && sectionBottom > scroll) {
+            // Remove color classes from body
+            bodyElement.classList.remove(
+              ...(bodyElement.classList.toString().match(/(^|\s)color-\S+/g) ||
+                [])
+            );
+
+            // Remove "active" class from all sections and add it to the current section
+            sectionElements.forEach((s) => s.classList.remove("active"));
+            section.classList.add("active");
+          }
+        });
+      }
+
+      // Bind handleScroll to the scroll event and trigger it initially
+      windowElement.addEventListener("scroll", handleScroll);
+      handleScroll();
+    </script>
   </body>
 </html>
