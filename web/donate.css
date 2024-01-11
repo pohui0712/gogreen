@@ -77,7 +77,44 @@ body {
   grid-column: 25/29;
 }
 
-/* Second page: Benefit */
-.benefit {
+/* Second page: achievement*/
+.achievement {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  gap: 150px;
+}
+
+.container {
+  width: 250px;
+  height: 250px;
+  background-color: bisque;
+  border: 2px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container i {
+  font-size: 2.8em;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.container .num {
+  font-size: 5em;
+  text-align: center;
+  font-weight: 600px;
+  margin-top: 20px;
+}
+
+.container .text {
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 10px;
 }
