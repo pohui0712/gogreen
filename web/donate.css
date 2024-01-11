@@ -76,3 +76,8 @@ body {
   grid-row: 14/18;
   grid-column: 25/29;
 }
+
+/* Second page: Benefit */
+.benefit {
+  height: 100vh;
+}
