@@ -87,12 +87,12 @@ body {
 
 .wrapper {
   display: flex;
-  gap: 150px;
+  gap: 100px;
 }
 
 .container {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   background-color: bisque;
   border: 2px solid black;
   border-radius: 20px;
@@ -103,14 +103,14 @@ body {
 .container i {
   font-size: 2.8em;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .container .num {
-  font-size: 5em;
+  font-size: 4em;
   text-align: center;
   font-weight: 600px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .container .text {
