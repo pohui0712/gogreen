@@ -19,13 +19,13 @@ function numberCounting() {
 var runFunction = false;
 
 function myFunction() {
-  var testDivFromTop = document.querySelector(".wrapper").offsetTop;
+  var divFromTop = document.querySelector(".wrapper").offsetTop;
   var pageHeight = window.innerHeight;
 
   if (
     !runFunction &&
-    (document.body.scrollTop > testDivFromTop - pageHeight ||
-      document.documentElement.scrollTop > testDivFromTop - pageHeight)
+    (document.body.scrollTop > divFromTop - pageHeight ||
+      document.documentElement.scrollTop > divFromTop - pageHeight)
   ) {
     numberCounting();
     runFunction = true;
