@@ -1,6 +1,7 @@
 body {
   margin: 0;
   background: linear-gradient(#fefae0, #ccd5ae);
+  font-family: "Playpen Sans";
 }
 
 /* First page: grid-template */
@@ -78,21 +79,38 @@ body {
 }
 
 /* Second page: achievement*/
-.achievement {
-  height: 100vh;
+.donation-content {
+  height: 150vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.content-description {
+  text-align: center;
+}
+
+.content-description p {
+  font-size: 1em;
+  margin: 30px auto;
+  width: 50%;
+}
+
+.content-description iframe {
+  width: 60%;
+  height: 70vh;
+}
+
 .wrapper {
+  margin-top: 30px;
   display: flex;
   gap: 100px;
 }
 
 .container {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   background-color: bisque;
   border: 2px solid black;
   border-radius: 20px;
@@ -101,20 +119,20 @@ body {
 }
 
 .container i {
-  font-size: 2.8em;
+  font-size: 1.6em;
   text-align: center;
   margin-top: 20px;
 }
 
 .container .num {
-  font-size: 4em;
+  font-size: 2em;
   text-align: center;
   font-weight: 600px;
   margin-top: 10px;
 }
 
 .container .text {
-  font-size: 1.2em;
+  font-size: 0.8em;
   text-align: center;
   margin-top: 10px;
 }
