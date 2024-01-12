@@ -172,8 +172,6 @@ body#non-scroll.active {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  /* font-family: ; */
   height: 100vh;
   display: none;
 }

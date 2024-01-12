@@ -137,6 +137,70 @@ body {
   margin-top: 10px;
 }
 
+/* Third page: donate-page */
+
 .donate-page {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-information {
+  width: 150vh;
+  height: 60vh;
+  background-color: bisque;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.card-information h2 {
+  text-align: center;
+}
+.input-information {
+  margin: 0 20px;
+}
+
+.input-information label {
+  font-size: 0.8em;
+}
+
+.input-information input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 6vh;
+}
+
+#test {
+  display: flex;
+}
+
+#test .input-information {
+  flex: 1; /* Make the child divs inside #test share the available space equally */
+}
+
+.card-information .donate-btn {
+  text-align: center;
+}
+
+.card-information #hover-btn {
+  width: 20vh;
+  height: 6vh;
+  color: #606c38;
+  background: white;
+  border: 2px solid #606c38;
+  border-radius: 20px;
+  transition: 0.3s;
+  margin-top: 5vh;
+}
+.card-information #hover-btn:hover {
+  width: 20vh;
+  height: 6vh;
+  color: white;
+  background: #606c38;
+  border: none;
+  border-radius: 20px;
+  z-index: 1;
+  box-shadow: 1px 1px 5px 2px gray;
+  transform: translate(0, -3px);
 }
