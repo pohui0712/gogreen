@@ -1,10 +1,15 @@
+<?php
+include './php/dbConn.php';
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoGreen</title>
-    <link rel="stylesheet" href="index.css" />
+    <!-- <link href="index.css" rel="stylesheet" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,6 +25,8 @@
         margin: 0;
         font-family: "Playpen Sans";
       }
+      <?php include 'index.css'?>
+      <?php include 'about.css'?>
     </style>
     <script type="importmap">
       {
@@ -34,77 +41,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
   </head>
   <body id="non-scroll">
-    <header>
-      <nav class="navbar" id="blur-header">
-        <a href="#" class="logo">
-          <img src="./images/logo.png" alt="logo" />
-          <h2>GoGreen</h2>
-        </a>
-        <ul class="links">
-          <li><a href="#blur-aboutPage">About Us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Donate</a></li>
-          <li><a href="#blur-contact">Contact</a></li>
-        </ul>
-        <button id="login-btn">LOG IN</button>
-      </nav>
-    </header>
 
-    <div id="login-page">
-      <div class="container" id="container">
-        <div class="form-container sign-up-container">
-          <form action="#" method="post">
-            <i class="fa-solid fa-xmark" id="close-btn-sign-up"></i>
-            <h1>Create Account</h1>
-            <div class="social-container">
-              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-              <a href="./php/login.php" class="social"
-                ><i class="fab fa-google-plus-g"></i
-              ></a>
-              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <span>or use your email for registration</span>
-            <input type="text" placeholder="name" />
-            <input type="email" placeholder="Email" />
-            <input type="text" placeholder="Password" />
-            <button>Sign Up</button>
-          </form>
-        </div>
-        <div class="form-container sign-in-container">
-          <form action="#">
-            <h1>Sign in</h1>
-            <div class="social-container">
-              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="social"
-                ><i class="fab fa-google-plus-g"></i
-              ></a>
-              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <span>or use your account</span>
-            <input type="email" placeholder="Email" />
-            <input type="text" placeholder="Password" />
-            <button>Sign In</button>
-          </form>
-        </div>
-        <div class="overlay-container">
-          <div class="overlay">
-            <div class="overlay-panel overlay-left">
-              <h1>Welcome Back</h1>
-              <p>
-                To keep connected with us please login with your personal info
-              </p>
-              <button class="overlay-btn" id="signIn">Sign In</button>
-            </div>
-            <div class="overlay-panel overlay-right">
-              <i class="fa-solid fa-xmark" id="close-btn-overlay"></i>
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p>
-              <button class="overlay-btn" id="signUp">Sign Up</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php include 'header.php' ?>
+
     <section class="home-container" id="blur-homeContainer">
       <div id="text-container">
         <h1 class="animate">Small Effort Great Impact</h1>
@@ -122,32 +61,28 @@
       </div>
       <canvas id="model-container"></canvas>
     </section>
+
     <section class="aboutPage" id="blur-aboutPage">
-      <div>
-        <div class="background">
-          <div class="text-overwrite">
-            <h2 class="aboutTitle">Who We Are</h2>
-            <h1>
-              We Encourage Community to Participate In Conserving And Preserving
-              Environment
-            </h1>
-            <p class="aboutParagraph">
-              We are a dedicated group of passionate volunteers committed to
-              catalyzing positive change in our communities by spearheading
-              efforts to protect and preserve the environment. With a shared
-              vision of a healthier planet for current and future generations,
-              we have united to serve as leaders and advocates for environmental
-              stewardship. Our diverse backgrounds, expertise, and unwavering
-              enthusiasm empower us to educate and inspire everyone to take
-              safeguard our natural world. Through collaborative initiatives,
-              educational campaigns, and grassroots movements, we strive to
-              cultivate a culture of environmental awareness and action,
-              encouraging everyone to contribute in their unique ways.
-            </p>
+      <div class="aboutContainer">
+        <div class="aboutImage">
+          <img src="./images/teams.jpg" />
+        </div>
+        <div class="aboutText">
+          <div class="smallTitle">
+            We do our best to beautify the environment
+          </div>
+          <div class="sentence">
+            With a shared vision of a healthier planet, we strive to raise
+            awareness, educate, and engage individuals in sustainable practices,
+            making a lasting impact on the Earth we call home.We believe in the
+            power of collective action to address pressing environmental issues.
+            Join us in our efforts to create a world where nature thrives and
+            biodiversity flourishes.
           </div>
         </div>
       </div>
     </section>
+
     <section class="benefitPage" id="blur-benefitPage">
       <div class="grid-container">
         <div class="grid-item">
@@ -293,31 +228,9 @@
         </div>
       </div>
     </section>
-    <section class="spacePage" id="blur-footer">
-      <div class="footer-container">
-        <div class="left-footer">
-          <a href="#"><img src="./images/logo.png" alt="logo" /></a>
-        </div>
-        <div class="middle-footer">
-          <a href="#blur-aboutPage">
-            <div class="footer-text">About</div>
-          </a>
-          <a href="#blur-benefitPage">
-            <div class="footer-text">Benefits</div>
-          </a>
-          <a href="#blur-program">
-            <div class="footer-text">Programs</div>
-          </a>
-        </div>
-        <div class="right-footer">
-          <div class="footer-text">Get in touch: letssprotect@hotmail.com</div>
-          <div class="footer-text">Contact via 070432228</div>
-          <div class="footer-text">
-            © 2023 — GoGreen Foundation. All Rights Reserved.
-          </div>
-        </div>
-      </div>
-    </section>
+
+    <?php include 'footer.html' ?>
+
     <script type="module" src="./javascript/earthModel.js"></script>
     <script type="module" src="./javascript/blurbackground.js"></script>
     <script type="module" src="./javascript/loginPage.js"></script>

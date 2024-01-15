@@ -1,0 +1,41 @@
+.page {
+  margin-top: 320px;
+}
+.page h1 {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.aboutCard {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.about-card-image {
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+}
+
+.about-card-image img {
+  width: 100%;
+  height: 380px;
+}
+
+.card-content {
+  padding: 16px;
+  text-align: center;
+}
+
+.card-content h3 {
+  font-weight: bolder;
+  font-size: x-large;
+  padding: 5px;
+}
+
+.position {
+  line-height: 50px;
+}
