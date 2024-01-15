@@ -1,0 +1,206 @@
+body {
+  margin: 0;
+  background: linear-gradient(#fefae0, #ccd5ae);
+  font-family: "Playpen Sans";
+}
+
+/* First page: grid-template */
+.grid-template,
+.program-content {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(30, 1fr);
+  gap: 0.3em;
+}
+
+.grid-template h1 {
+  margin: 0;
+  font-size: 50px;
+  grid-row: 5/7;
+  grid-column: 4/12;
+}
+
+.grid-template p {
+  margin: 0;
+  grid-row: 11/14;
+  grid-column: 4/11;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.item-1 {
+  grid-row: 9/13;
+  grid-column: 13/17;
+}
+
+.item-2 {
+  grid-row: 9/13;
+  grid-column: 18/22;
+}
+
+.item-3 {
+  grid-row: 9/13;
+  grid-column: 23/27;
+}
+
+.item-4 {
+  grid-row: 4/8;
+  grid-column: 15/19;
+}
+
+.item-5 {
+  grid-row: 4/8;
+  grid-column: 20/24;
+}
+
+.item-6 {
+  grid-row: 4/8;
+  grid-column: 25/29;
+}
+
+.item-7 {
+  grid-row: 14/18;
+  grid-column: 15/19;
+}
+
+.item-8 {
+  grid-row: 14/18;
+  grid-column: 20/24;
+}
+
+.item-9 {
+  grid-row: 14/18;
+  grid-column: 25/29;
+}
+
+/* Second page: achievement*/
+.donation-content {
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-description {
+  text-align: center;
+}
+
+.content-description p {
+  font-size: 1em;
+  margin: 30px auto;
+  width: 50%;
+}
+
+.content-description iframe {
+  width: 60%;
+  height: 70vh;
+}
+
+.wrapper {
+  margin-top: 30px;
+  display: flex;
+  gap: 100px;
+}
+
+.container {
+  width: 150px;
+  height: 150px;
+  background-color: bisque;
+  border: 2px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container i {
+  font-size: 1.6em;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.container .num {
+  font-size: 2em;
+  text-align: center;
+  font-weight: 600px;
+  margin-top: 10px;
+}
+
+.container .text {
+  font-size: 0.8em;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Third page: donate-page */
+
+.donate-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-information {
+  width: 150vh;
+  height: 60vh;
+  background-color: bisque;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.card-information h2 {
+  text-align: center;
+}
+.input-information {
+  margin: 0 20px;
+}
+
+.input-information label {
+  font-size: 0.8em;
+}
+
+.input-information input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 6vh;
+}
+
+#test {
+  display: flex;
+}
+
+#test .input-information {
+  flex: 1; /* Make the child divs inside #test share the available space equally */
+}
+
+.card-information .donate-btn {
+  text-align: center;
+}
+
+.card-information #hover-btn {
+  width: 20vh;
+  height: 6vh;
+  color: #606c38;
+  background: white;
+  border: 2px solid #606c38;
+  border-radius: 20px;
+  transition: 0.3s;
+  margin-top: 5vh;
+}
+.card-information #hover-btn:hover {
+  width: 20vh;
+  height: 6vh;
+  color: white;
+  background: #606c38;
+  border: none;
+  border-radius: 20px;
+  z-index: 1;
+  box-shadow: 1px 1px 5px 2px gray;
+  transform: translate(0, -3px);
+}
