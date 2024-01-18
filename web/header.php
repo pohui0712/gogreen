@@ -54,89 +54,89 @@
         ?>
       </nav>
       <div id="login-page">
-      <div class="container" id="container">
-        <div class="form-container sign-up-container">
-          <form action="./php/signUp.php" method="post">
-            <i class="fa-solid fa-xmark" id="close-btn-sign-up"></i>
-            <h1>Create Account</h1>
-            <div class="social-container">
-              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="social"
-                ><i class="fab fa-google-plus-g"></i
-              ></a>
-              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <span>or use your email for registration</span>
+        <div class="container" id="container">
+          <div class="form-container sign-up-container">
+            <form action="./php/signUp.php" method="post">
+              <i class="fa-solid fa-xmark" id="close-btn-sign-up"></i>
+              <h1>Create Account</h1>
+              <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"
+                  ><i class="fab fa-google-plus-g"></i
+                ></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <span>or use your email for registration</span>
 
-            <input type="text" placeholder="Username" name="signUpName" />
-            <input type="email" placeholder="Email" name="signUpEmail" />
-            <input
-              type="password"
-              placeholder="Password"
-              name="signUpPassword"
-            />
-            <button type="submit" value="signUp" name="signUpBtn">
-              Sign Up
-            </button>
-            <?php
-            if (isset($_SESSION['signUpError'])) {
-            echo '<script>
-                  alert("' . $_SESSION['signUpError'] . '");
-                  </script>';
-            unset($_SESSION['signUpError']);
-            }
-            ?>
-          </form>
-        </div>
-        <div class="form-container sign-in-container">
-          <form action="./php/signIn.php" method="post">
-            <h1>Sign in</h1>
-            <div class="social-container">
-              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" class="social"
-                ><i class="fab fa-google-plus-g"></i
-              ></a>
-              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <span>or use your account</span>
-            <input type="email" placeholder="Email" name="signInEmail" />
-            <input
-              type="password"
-              placeholder="Password"
-              name="signInPassword"
-            />
-            <button type="submit" value="signIn" name="signInBtn">
-              Sign In
-            </button>
-            <?php
-            if (isset($_SESSION['signInError'])) {
-            echo '<script>
-                  alert("' . $_SESSION['signInError'] . '");
-                  </script>';
-            unset($_SESSION['signInError']);
-            }
-            ?>
-          </form>
-        </div>
-        <div class="overlay-container">
-          <div class="overlay">
-            <div class="overlay-panel overlay-left">
-              <h1>Welcome Back</h1>
-              <p>
-                To keep connected with us please login with your personal info
-              </p>
-              <button class="overlay-btn" id="signIn">Sign In</button>
-            </div>
-            <div class="overlay-panel overlay-right">
-              <i class="fa-solid fa-xmark" id="close-btn-overlay"></i>
-              <h1>Hello, Friend!</h1>
-              <p>Enter your personal details and start journey with us</p>
-              <button class="overlay-btn" id="signUp">Sign Up</button>
+              <input type="text" placeholder="Username" name="signUpName" />
+              <input type="email" placeholder="Email" name="signUpEmail" />
+              <input
+                type="password"
+                placeholder="Password"
+                name="signUpPassword"
+              />
+              <button type="submit" value="signUp" name="signUpBtn">
+                Sign Up
+              </button>
+              <?php
+              if (isset($_SESSION['signUpError'])) {
+              echo '<script>
+                    alert("' . $_SESSION['signUpError'] . '");
+                    </script>';
+              unset($_SESSION['signUpError']);
+              }
+              ?>
+            </form>
+          </div>
+          <div class="form-container sign-in-container">
+            <form action="./php/signIn.php" method="post">
+              <h1>Sign in</h1>
+              <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"
+                  ><i class="fab fa-google-plus-g"></i
+                ></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <span>or use your account</span>
+              <input type="email" placeholder="Email" name="signInEmail" />
+              <input
+                type="password"
+                placeholder="Password"
+                name="signInPassword"
+              />
+              <button type="submit" value="signIn" name="signInBtn">
+                Sign In
+              </button>
+              <?php
+              if (isset($_SESSION['signInError'])) {
+              echo '<script>
+                    alert("' . $_SESSION['signInError'] . '");
+                    </script>';
+              unset($_SESSION['signInError']);
+              }
+              ?>
+            </form>
+          </div>
+          <div class="overlay-container">
+            <div class="overlay">
+              <div class="overlay-panel overlay-left">
+                <h1>Welcome Back</h1>
+                <p>
+                  To keep connected with us please login with your personal info
+                </p>
+                <button class="overlay-btn" id="signIn">Sign In</button>
+              </div>
+              <div class="overlay-panel overlay-right">
+                <i class="fa-solid fa-xmark" id="close-btn-overlay"></i>
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="overlay-btn" id="signUp">Sign Up</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </header>
 </body>
 <script type="module" src="./javascript/loginPage.js"></script>
