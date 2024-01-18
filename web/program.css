@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  font-family: "Playpen Sans";
+  list-style-type: none;
+}
+
+img {
+  width: 200px;
+}
+
+.program {
+  margin: 0;
+}
+
+.program-listing {
+  width: 400px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: bisque;
+}
