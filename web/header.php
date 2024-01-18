@@ -34,20 +34,19 @@
         <?php
         if (isset($_GET['logout'])) {
           echo '<script>
-                  var confirmation = confirm("Do you want to log out ?");
-                  if (confirmation) {
-                    location.href = "./php/logout.php";
-                  } else {
-                    location.href = "index.php";
-                  }
+                  location.href = "./php/logout.php";
                 </script>';
           exit();
           }
 
         if (isset($_SESSION['username'])) {
-          echo '<a href="?logout=true">
+          echo '
+              <div class="dropdown">
                 <button id="login-btn">' . $_SESSION['username'] . '</button>
-                </a>';
+                <div class="dropdown-content" id="profileDropdown">
+                  <a href="?logout=true" id="logoutLink">Logout</a>
+                </div>
+              </div>';
       } else {
           echo '<button id="login-btn">LOG IN</button>';
       }
