@@ -1,9 +1,3 @@
-body {
-  margin: 0;
-  background: linear-gradient(#fefae0, #ccd5ae);
-  font-family: "Playpen Sans";
-}
-
 /* First page: grid-template */
 .grid-template,
 .program-content {
@@ -108,7 +102,7 @@ body {
   gap: 100px;
 }
 
-.container {
+.icon-container {
   width: 150px;
   height: 150px;
   background-color: bisque;
@@ -118,20 +112,20 @@ body {
   flex-direction: column;
 }
 
-.container i {
+.icon-container i {
   font-size: 1.6em;
   text-align: center;
   margin-top: 20px;
 }
 
-.container .num {
+.icon-container .num {
   font-size: 2em;
   text-align: center;
   font-weight: 600px;
   margin-top: 10px;
 }
 
-.container .text {
+.icon-container .text {
   font-size: 0.8em;
   text-align: center;
   margin-top: 10px;
