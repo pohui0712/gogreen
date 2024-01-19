@@ -1,9 +1,22 @@
+<?php 
+include './php/dbConn.php';
+session_start();
+include 'header.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="donate.css" />
+    <style>
+      body {
+        margin: 0;
+        background: linear-gradient(#fefae0, #ccd5ae);
+        font-family: "Playpen Sans";
+      }
+      <?php include 'index.css' ?>
+      <?php include 'donate.css' ?>
+    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -66,22 +79,22 @@
         <iframe src="https://www.youtube.com/embed/Y2qf5BTDq2w"> </iframe>
       </div>
       <div class="wrapper">
-        <div class="container">
+        <div class="icon-container">
           <i class="fa-solid fa-hand-holding-dollar"></i>
           <span class="num" data-value="400">000</span>
           <span class="text">Total Donation</span>
         </div>
-        <div class="container">
+        <div class="icon-container">
           <i class="fa-solid fa-users-rectangle"></i>
           <span class="num" data-value="10">000</span>
           <span class="text">Community Member</span>
         </div>
-        <div class="container">
+        <div class="icon-container">
           <i class="fa-solid fa-seedling"></i>
           <span class="num" data-value="200">000</span>
           <span class="text">Tree Plantning</span>
         </div>
-        <div class="container">
+        <div class="icon-container">
           <i class="fa-solid fa-award"></i>
           <span class="num" data-value="2">000</span>
           <span class="text">Award Received</span>
@@ -117,7 +130,7 @@
         <div class="donate-btn"><button id="hover-btn">DONATE</button></div>
       </div>
     </div>
-    <!--  -->
+    <?php include 'footer.html' ?>
     <script type="module" src="./javascript/numberCounting.js"></script>
     <script type="module" src="./javascript/loginPage.js"></script>
   </body>

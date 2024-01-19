@@ -40,20 +40,17 @@ html {
 }
 
 /* header */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: ; */
 }
 
 body {
   height: 100vh;
   width: 100%;
-  /* background: url("/image/irelandstreet.jpg") center/cover no-repeat; */
   background-color: honeydew;
-  /* overflow-y: hidden; */
-}
+} */
 
 header {
   position: fixed;
