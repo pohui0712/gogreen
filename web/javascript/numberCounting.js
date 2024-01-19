@@ -1,6 +1,6 @@
 function numberCounting() {
   let values = document.querySelectorAll(".num");
-  let interval = 1000;
+  let interval = 100;
 
   values.forEach((value) => {
     let startValue = 0;
@@ -16,9 +16,8 @@ function numberCounting() {
   });
 }
 
-var runFunction = false;
-
 function myFunction() {
+  let runFunction = false;
   var divFromTop = document.querySelector(".wrapper").offsetTop;
   var pageHeight = window.innerHeight;
 
