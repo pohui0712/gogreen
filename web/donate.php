@@ -131,7 +131,44 @@ include 'header.php';
       </div>
     </div>
     <?php include 'footer.html' ?>
-    <script type="module" src="./javascript/numberCounting.js"></script>
+    <script>
+      function numberCounting() {
+        let values = document.querySelectorAll(".num");
+        let interval = 100;
+
+        values.forEach((value) => {
+          let startValue = 0;
+          let endValue = parseInt(value.getAttribute("data-value"));
+          let duration = Math.floor(interval / endValue);
+          let counter = setInterval(function () {
+            startValue += 1;
+            value.textContent = `${startValue}k`;
+            if (startValue === endValue) {
+              clearInterval(counter);
+            }
+          }, duration);
+        });
+      }
+
+      var runFunction = false;
+
+      function myFunction() {
+        var testDivFromTop = document.querySelector(".wrapper").offsetTop;
+        var pageHeight =  window.innerHeight;
+
+        if (
+          !runFunction &&
+          (document.body.scrollTop > testDivFromTop - pageHeight ||
+            document.documentElement.scrollTop > testDivFromTop - pageHeight)
+        ) {
+          numberCounting()
+          runFunction = true;
+        }
+      }
+
+      window.onscroll = function() {myFunction()};
+    </script>
+    <!-- <script type="module" src="./javascript/numberCounting.js"></script> -->
     <script type="module" src="./javascript/loginPage.js"></script>
   </body>
 </html>

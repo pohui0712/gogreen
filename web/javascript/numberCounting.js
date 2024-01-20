@@ -15,9 +15,9 @@ function numberCounting() {
     }, duration);
   });
 }
+var runFunction = false;
 
 function myFunction() {
-  let runFunction = false;
   var divFromTop = document.querySelector(".wrapper").offsetTop;
   var pageHeight = window.innerHeight;
 
