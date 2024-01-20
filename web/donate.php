@@ -105,33 +105,37 @@ include 'header.php';
     <div class="donate-page">
       <div class="card-information">
         <h2>Payment Information</h2>
-        <div class="input-information">
-          <label for="donate-amount">AMOUNT</label>
-          <input type="text" placeholder="DONATE AMOUNT" />
-        </div>
-        <div class="input-information">
-          <label for="cardholder-name">CARDHOLDER NAME</label><br />
-          <input type="text" placeholder="NAME" />
-        </div>
-        <div class="input-information">
-          <label for="card-name">CARD NAME</label><br />
-          <input type="text" placeholder="1234 1234 1234 1234" />
-        </div>
-        <div id="test">
+        <form action='./php/donation.php' method='post'>
           <div class="input-information">
-            <label for="expiration">EXPIRATION</label><br />
-            <input type="text" placeholder="MM / YY" />
+            <label for="donate-amount">AMOUNT</label>
+            <input type="text" placeholder="DONATE AMOUNT" />
           </div>
           <div class="input-information">
-            <label for="CVC">CVC</label><br />
-            <input type="text" placeholder="CVC" />
+            <label for="cardholder-name">CARDHOLDER NAME</label><br />
+            <input type="text" placeholder="NAME" />
           </div>
-        </div>
-        <div class="donate-btn"><button id="hover-btn">DONATE</button></div>
+          <div class="input-information">
+            <label for="card-name">CARD NAME</label><br />
+            <input type="text" placeholder="1234 1234 1234 1234" />
+          </div>
+          <div id="test">
+            <div class="input-information">
+              <label for="expiration">EXPIRATION</label><br />
+              <input type="text" placeholder="MM / YY" />
+            </div>
+            <div class="input-information">
+              <label for="CVC">CVC</label><br />
+              <input type="text" placeholder="CVC" />
+            </div>
+          </div>
+          <div class="donate-btn">
+            <button type="submit" id="hover-btn" name="donateBtn">DONATE</button>
+          </div>
+        </form>
       </div>
     </div>
     <?php include 'footer.html' ?>
-    <script type="module" src="./javascript/numberCounting.js"></script>
     <script type="module" src="./javascript/loginPage.js"></script>
+    <script type="module" src="./javascript/numberCounting.js"></script>
   </body>
 </html>

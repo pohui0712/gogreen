@@ -15,6 +15,7 @@ if (isset($_POST["signInBtn"])) {
         $_SESSION['email'] = $login['email'];
         $_SESSION['password'] = $login['password'];
         $_SESSION['username'] = $login['username'];
+        $_SESSION['donation'] = $login['donation'];
         header("Location: ../home.php");
         exit();
     } else {
