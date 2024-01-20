@@ -22,6 +22,7 @@ prev.onclick = function () {
   } else {
     active -= 1;
   }
+  reloadSlider();
 };
 
 let refreshSlider = setInterval(() => {
