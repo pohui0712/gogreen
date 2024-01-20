@@ -135,7 +135,7 @@ include 'header.php';
       </div>
     </div>
     <?php include 'footer.html' ?>
-    <script type="module" src="./javascript/loginPage.js"></script>
     <script type="module" src="./javascript/numberCounting.js"></script>
+    <script type="module" src="./javascript/loginPage.js"></script>
   </body>
 </html>

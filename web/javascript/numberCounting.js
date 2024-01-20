@@ -15,6 +15,7 @@ function numberCounting() {
     }, duration);
   });
 }
+var runFunction = false;
 
 var runFunction = false;
 
