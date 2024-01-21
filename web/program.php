@@ -1,3 +1,8 @@
+<?php 
+include './php/dbConn.php';
+session_start();
+include 'header.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,13 +43,11 @@
         </div>
       </div>
     </div>
-
     <!-- button prev and next -->
     <div class="slider-button">
       <button id="prev"><</button>
       <button id="next">></button>
     </div>
-
     <!-- dots -->
     <ul class="dots">
       <li class="dots-active"></li>
@@ -53,7 +56,10 @@
       <li></li>
       <li></li>
     </ul>
-
+    <div>
+      <h1>Hello</h1>
+    </div>
     <script type="module" src="./javascript/autoSlider.js"></script>
   </body>
 </html>
+
