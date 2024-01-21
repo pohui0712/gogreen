@@ -56,8 +56,25 @@ include 'header.php';
       <li></li>
       <li></li>
     </ul>
-    <div>
-      <h1>Hello</h1>
+
+    <div class="filter-section">
+      <h4 id='result-counter'>
+        Showing 1 -
+        <span id='total-count'>9</span>
+        of
+        <span id='total-redult'>9</span>
+        Result
+      </h4>
+
+      <div class='sortOption-container'>
+        <option value="Default">Default</option>
+        <option value="highToLow">Sort by price: high to low</option>
+        <option value="lowToHigh">Sort by price: low to</option>
+      </div>
+    </div>
+
+    <div class="program-grid">
+      
     </div>
     <script type="module" src="./javascript/autoSlider.js"></script>
   </body>
