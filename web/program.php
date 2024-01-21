@@ -74,7 +74,33 @@ include 'header.php';
     </div>
 
     <div class="program-grid">
-      
+      <div class="program program-1">
+        <img src="images/beach.jpeg" alt="" />
+      </div>
+      <div class="program program-2">
+        <img src="images/beachCleaning.png" alt="" />
+      </div>
+      <div class="program program-3">
+        <img src="images/greenCampaign.jpg" alt="" />
+      </div>
+      <div class="program program-4">
+        <img src="images/kidsRecyclingProgram.png" alt="" />
+      </div>
+      <div class="program program-5">
+        <img src="images/programGridCleanRubbish.jpg" alt="" />
+      </div>
+      <div class="program program-6">
+        <img src="images/programGridCraftTree.jpg" alt="" />
+      </div>
+      <div class="program program-7">
+        <img src="images/schoolCampaign.jpeg" alt="" />
+      </div>
+      <div class="program program-8">
+        <img src="images/together.jpg" alt="" />
+      </div>
+      <div class="program program-9">
+        <img src="images/treePlanting.jpg" alt="" />
+      </div>
     </div>
     <script type="module" src="./javascript/autoSlider.js"></script>
   </body>

@@ -13,6 +13,7 @@ next.onclick = function () {
   } else {
     active += 1;
   }
+  console.log("Click");
   reloadSlider();
 };
 
@@ -22,6 +23,7 @@ prev.onclick = function () {
   } else {
     active -= 1;
   }
+  console.log("Click");
   reloadSlider();
 };
 
@@ -37,7 +39,7 @@ function reloadSlider() {
   lastActiveDot.classList.remove("dots-active");
   dots[active].classList.add("dots-active");
   clearInterval(refreshSlider);
-  let refreshSlider = setInterval(() => {
+  refreshSlider = setInterval(() => {
     next.click();
   }, 5000);
 }
