@@ -8,15 +8,6 @@ include 'header.php';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      body {
-        margin: 0;
-        background: linear-gradient(#fefae0, #ccd5ae);
-        font-family: "Playpen Sans";
-      }
-      <?php include 'index.css' ?>
-      <?php include 'donate.css' ?>
-    </style>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -27,6 +18,15 @@ include 'header.php';
       href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap"
       rel="stylesheet"
     />
+    <style>
+      body {
+        margin: 0;
+        background: linear-gradient(#fefae0, #ccd5ae);
+        font-family: "Playpen Sans";
+      }
+      <?php include 'index.css' ?>
+      <?php include 'donate.css' ?>
+    </style>
     <title>Document</title>
   </head>
   <body>
@@ -103,39 +103,41 @@ include 'header.php';
     </div>
 
     <div class="donate-page">
-      <div class="card-information">
-        <h2>Payment Information</h2>
-        <form action='./php/donation.php' method='post'>
+      <form action='./php/donation.php' method='post'>
+        <div class="card-information">
+          <h2>Payment Information</h2>
           <div class="input-information">
             <label for="donate-amount">AMOUNT</label>
-            <input type="text" placeholder="DONATE AMOUNT" />
+            <input type="text" placeholder="DONATE AMOUNT" name="donateAmount"/>
           </div>
           <div class="input-information">
             <label for="cardholder-name">CARDHOLDER NAME</label><br />
-            <input type="text" placeholder="NAME" />
+            <input type="text" placeholder="NAME" name="cardName"/>
           </div>
           <div class="input-information">
             <label for="card-name">CARD NAME</label><br />
-            <input type="text" placeholder="1234 1234 1234 1234" />
+            <input type="text" placeholder="1234 1234 1234 1234" name="cardNumber" id="cardNumber"/>
           </div>
           <div id="test">
             <div class="input-information">
               <label for="expiration">EXPIRATION</label><br />
-              <input type="text" placeholder="MM / YY" />
+              <input type="text" placeholder="MM / YY" name="expiration" id="expiration"/>
             </div>
             <div class="input-information">
               <label for="CVC">CVC</label><br />
-              <input type="text" placeholder="CVC" />
+              <input type="text" placeholder="CVC" name="cvc" id="cvc"/>
             </div>
           </div>
-          <div class="donate-btn">
-            <button type="submit" id="hover-btn" name="donateBtn">DONATE</button>
+            <div class="donate-btn">
+              <button type="submit" id="hover-btn" name="donateBtn">DONATE</button>
+            </div>
           </div>
         </form>
-      </div>
-    </div>
+     </div>
+
     <?php include 'footer.html' ?>
     <script type="module" src="./javascript/numberCounting.js"></script>
     <script type="module" src="./javascript/loginPage.js"></script>
+    <script type="module" src="./javascript/payment.js"></script>
   </body>
 </html>

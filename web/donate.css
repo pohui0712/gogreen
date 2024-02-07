@@ -140,6 +140,10 @@
   align-items: center;
 }
 
+form {
+  background: linear-gradient(#fefae07f, #ccd5ae);
+}
+
 .card-information {
   width: 150vh;
   height: 60vh;

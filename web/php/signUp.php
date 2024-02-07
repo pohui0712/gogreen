@@ -7,7 +7,14 @@ if (isset($_POST["signUpBtn"])) {
     $username = $_POST['signUpName'];
     $email = $_POST['signUpEmail'];
     $password = $_POST['signUpPassword'];
+    $donation = 0;
 
+    if (empty($username) || empty($email) || empty($password)) {
+        $_SESSION['signUpError'] = "Please fill in all the fields";
+        header("Location: ../home.php");
+        exit();
+    }
+    
     $validation = "SELECT * FROM testingVolunteers WHERE email = '$email'";
     $result = mysqli_query($connection, $validation);
 
@@ -16,7 +23,8 @@ if (isset($_POST["signUpBtn"])) {
         header("Location: ../home.php");
         exit();
     } else {
-        $query = "INSERT INTO testingVolunteers (username, email, password) VALUES ('$username', '$email', '$password')";
+        $query = "INSERT INTO testingVolunteers (username, email, password, donation) 
+                  VALUES ('$username', '$email', '$password', '$donation')";
         $registration = mysqli_query($connection, $query);
 
         if ($registration === true) {
