@@ -15,10 +15,17 @@ include 'header.php';
     />
     <link rel="stylesheet" href="program.css" />
     <style>
-      body {
+    * {
         margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        width: 100%;
+        background-color: honeydew;
         font-family: "Playpen Sans";
-        /* box-sizing: border-box; */
       }
     </style>
     <title>Document</title>
@@ -57,50 +64,60 @@ include 'header.php';
       <li></li>
     </ul>
 
-    <div class="filter-section">
-      <h4 id='result-counter'>
-        Showing 1 -
-        <span id='total-count'>9</span>
-        of
-        <span id='total-redult'>9</span>
-        Result
-      </h4>
-
-      <div class='sortOption-container'>
-        <option value="Default">Default</option>
-        <option value="highToLow">Sort by price: high to low</option>
-        <option value="lowToHigh">Sort by price: low to</option>
-      </div>
-    </div>
-
     <div class="program-grid">
-      <div class="program program-1">
-        <img src="images/beach.jpeg" alt="" />
-      </div>
-      <div class="program program-2">
-        <img src="images/beachCleaning.png" alt="" />
-      </div>
-      <div class="program program-3">
-        <img src="images/greenCampaign.jpg" alt="" />
-      </div>
-      <div class="program program-4">
-        <img src="images/kidsRecyclingProgram.png" alt="" />
-      </div>
-      <div class="program program-5">
-        <img src="images/programGridCleanRubbish.jpg" alt="" />
-      </div>
-      <div class="program program-6">
-        <img src="images/programGridCraftTree.jpg" alt="" />
-      </div>
-      <div class="program program-7">
-        <img src="images/schoolCampaign.jpeg" alt="" />
-      </div>
-      <div class="program program-8">
-        <img src="images/together.jpg" alt="" />
-      </div>
-      <div class="program program-9">
-        <img src="images/treePlanting.jpg" alt="" />
-      </div>
+    <?php
+      // Step 1: Connect to the database
+      // $servername = "localhost";
+      // $username = "root";
+      // $password = "";
+      // $databse = "gogreen";
+
+      // $conn = new mysqli($servername, $username, $password, $databse);
+
+      // // Check connection
+      // if ($conn->connect_error) {
+      //   die("Connection failed: " . $conn->connect_error);
+      // }
+
+      // // Step 2: Execute a query to fetch the userID from testingvolunteers
+      // $sql = "SELECT userID, username FROM testingvolunteers";
+      // $result = $conn->query($sql);
+
+      // // Step 3: Fetch the result and display it in HTML
+      // echo "<ul class='test'>";
+
+      // while($row = $result->fetch_assoc()) {
+      //     echo "<li>UserID: {$row['userID']}, Username: {$row['username']}</li>";
+      // }
+
+      // echo "</ul>";
+
+      // Close the connection
+      // $conn->close();
+      // ?> 
+
+      <?php 
+      // Include the database configuration file  
+      include './php/dbConn.php'; 
+      // Get image data from database 
+      $result = $connection->query("SELECT * FROM program ORDER BY id ASC"); 
+      ?>
+
+      <!-- Display images with BLOB data from database -->
+      <?php if($result->num_rows > 0){ ?> 
+          <div class="gallery"> 
+              <?php while($row = $result->fetch_assoc()){ ?> 
+                  <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" />
+                  <h3><?php echo $row['name']; ?></h3>
+                  <p>Date: <?php echo $row['date']; ?></p>
+                  <p>Time: <?php echo $row['time']; ?></p>
+                  <p>Location: <?php echo $row['location']; ?></p>
+                  <p>Description: <?php echo $row['description']; ?></p> 
+              <?php } ?> 
+          </div> 
+      <?php }else{ ?> 
+          <p class="status error">Image(s) not found...</p> 
+      <?php } ?>
     </div>
     <script type="module" src="./javascript/autoSlider.js"></script>
   </body>
