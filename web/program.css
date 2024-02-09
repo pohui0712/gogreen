@@ -81,13 +81,12 @@
 }
 
 /* program-grid */
-.program-grid {
+.program-section {
   background-color: antiquewhite;
   height: 200vh;
 }
 
-.test {
-  list-style: none;
+.gallery {
   display: flex;
   flex-wrap: wrap;
 }

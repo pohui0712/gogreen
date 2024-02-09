@@ -64,38 +64,7 @@ include 'header.php';
       <li></li>
     </ul>
 
-    <div class="program-grid">
-    <?php
-      // Step 1: Connect to the database
-      // $servername = "localhost";
-      // $username = "root";
-      // $password = "";
-      // $databse = "gogreen";
-
-      // $conn = new mysqli($servername, $username, $password, $databse);
-
-      // // Check connection
-      // if ($conn->connect_error) {
-      //   die("Connection failed: " . $conn->connect_error);
-      // }
-
-      // // Step 2: Execute a query to fetch the userID from testingvolunteers
-      // $sql = "SELECT userID, username FROM testingvolunteers";
-      // $result = $conn->query($sql);
-
-      // // Step 3: Fetch the result and display it in HTML
-      // echo "<ul class='test'>";
-
-      // while($row = $result->fetch_assoc()) {
-      //     echo "<li>UserID: {$row['userID']}, Username: {$row['username']}</li>";
-      // }
-
-      // echo "</ul>";
-
-      // Close the connection
-      // $conn->close();
-      // ?> 
-
+    <div class="program-section">
       <?php 
       // Include the database configuration file  
       include './php/dbConn.php'; 
@@ -106,14 +75,20 @@ include 'header.php';
       <!-- Display images with BLOB data from database -->
       <?php if($result->num_rows > 0){ ?> 
           <div class="gallery"> 
+            <ul>
               <?php while($row = $result->fetch_assoc()){ ?> 
-                  <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" />
-                  <h3><?php echo $row['name']; ?></h3>
-                  <p>Date: <?php echo $row['date']; ?></p>
-                  <p>Time: <?php echo $row['time']; ?></p>
-                  <p>Location: <?php echo $row['location']; ?></p>
-                  <p>Description: <?php echo $row['description']; ?></p> 
+                  <li>
+                    <div>
+                      <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" />
+                      <h3><?php echo $row['name']; ?></h3>
+                      <p>Date: <?php echo $row['date']; ?></p>
+                      <p>Time: <?php echo $row['time']; ?></p>
+                      <p>Location: <?php echo $row['location']; ?></p>
+                      <p>Description: <?php echo $row['description']; ?></p>
+                    </div>
+                  </li>
               <?php } ?> 
+            </ul>
           </div> 
       <?php }else{ ?> 
           <p class="status error">Image(s) not found...</p> 
