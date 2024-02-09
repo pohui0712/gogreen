@@ -32,7 +32,7 @@ session_start();
           </a>
           <ul class="links">
             <li><a href="about.php">About Us</a></li>
-            <li><a href="program.php">Services</a></li>
+            <li><a href="program.php">Programs</a></li>
             <li><a href="donate.php">Donate</a></li>
             <li><a href="home.php#blur-contact">Contact</a></li>
           </ul>
