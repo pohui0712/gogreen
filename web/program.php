@@ -13,21 +13,21 @@ include 'header.php';
       href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="program.css" />
     <style>
-    * {
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-
+      
       body {
         height: 100vh;
         width: 100%;
         background-color: honeydew;
         font-family: "Playpen Sans";
       }
-    </style>
+      </style>
+      <link rel="stylesheet" href="program.css" />
     <title>Document</title>
   </head>
   <body>
@@ -74,22 +74,20 @@ include 'header.php';
 
       <!-- Display images with BLOB data from database -->
       <?php if($result->num_rows > 0){ ?> 
-          <div class="gallery"> 
-            <ul>
-              <?php while($row = $result->fetch_assoc()){ ?> 
-                  <li>
-                    <div>
-                      <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" />
-                      <h3><?php echo $row['name']; ?></h3>
-                      <p>Date: <?php echo $row['date']; ?></p>
-                      <p>Time: <?php echo $row['time']; ?></p>
-                      <p>Location: <?php echo $row['location']; ?></p>
-                      <p>Description: <?php echo $row['description']; ?></p>
-                    </div>
-                  </li>
-              <?php } ?> 
-            </ul>
-          </div> 
+          <ul>
+            <?php while($row = $result->fetch_assoc()){ ?> 
+                <li>
+                  <div class="program-content">
+                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" />
+                    <h3><?php echo $row['name']; ?></h3>
+                    <p>Date: <?php echo $row['date']; ?></p>
+                    <p>Time: <?php echo $row['time']; ?></p>
+                    <p>Location: <?php echo $row['location']; ?></p>
+                    <p>Description: <?php echo $row['description']; ?></p>
+                  </div>
+                </li>
+            <?php } ?> 
+          </ul>
       <?php }else{ ?> 
           <p class="status error">Image(s) not found...</p> 
       <?php } ?>
