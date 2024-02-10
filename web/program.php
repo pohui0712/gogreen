@@ -26,8 +26,9 @@ include 'header.php';
         background-color: honeydew;
         font-family: "Playpen Sans";
       }
-      </style>
-      <link rel="stylesheet" href="program.css" />
+      <?php include 'index.css' ?>
+      <?php include 'program.css' ?>
+    </style>
     <title>Document</title>
   </head>
   <body>
@@ -64,12 +65,33 @@ include 'header.php';
       <li></li>
     </ul>
 
+    <div>
+      <form action="" method="GET" id="sortForm">
+        <select name="sort-list" id="sort-list" onchange="document.getElementById('sortForm').submit()">
+          <option value="default" <?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "default") { echo "selected"; }?>>Default</option>
+          <option value="a-z" <?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "a-z") { echo "selected"; }?>>A-Z</option>
+          <option value="z-a"<?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "z-a") { echo "selected"; }?>>Z-A</option>
+          <option value="date-asc" <?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "date-asc") { echo "selected"; }?>>According to Date</option>
+        </select>
+      </form>
+    </div>
+
     <div class="program-section">
       <?php 
-      // Include the database configuration file  
-      include './php/dbConn.php'; 
-      // Get image data from database 
-      $result = $connection->query("SELECT * FROM program ORDER BY id ASC"); 
+        $sort_option = "SELECT * FROM program ORDER BY id ASC";
+        if(isset($_GET["sort-list"]))
+        {
+          if($_GET["sort-list"] == "default"){
+            $sort_option = "SELECT * FROM program ORDER BY id ASC";
+          } elseif($_GET["sort-list"] == "a-z"){
+            $sort_option = "SELECT * FROM program ORDER BY name ASC";
+          } elseif($_GET["sort-list"] == "z-a"){
+            $sort_option = "SELECT * FROM program ORDER BY name DESC";
+          } elseif($_GET["sort-list"] == "date-asc"){
+            $sort_option = "SELECT * FROM program ORDER BY date ASC";
+          }
+        }
+        $result = $connection->query($sort_option); 
       ?>
 
       <!-- Display images with BLOB data from database -->
@@ -80,10 +102,10 @@ include 'header.php';
                   <div class="program-content">
                     <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" />
                     <h3><?php echo $row['name']; ?></h3>
-                    <p>Date: <?php echo $row['date']; ?></p>
-                    <p>Time: <?php echo $row['time']; ?></p>
-                    <p>Location: <?php echo $row['location']; ?></p>
-                    <p>Description: <?php echo $row['description']; ?></p>
+                    <p><b>Date: </b><?php echo $row['date']; ?></p>
+                    <p><b>Time: </b><?php echo $row['time']; ?></p>
+                    <p><b>Location: </b><?php echo $row['location']; ?></p>
+                    <p><b>Description: </b><?php echo $row['description']; ?></p>
                   </div>
                 </li>
             <?php } ?> 
@@ -92,6 +114,7 @@ include 'header.php';
           <p class="status error">Image(s) not found...</p> 
       <?php } ?>
     </div>
+    <?php include 'footer.html' ?>
     <script type="module" src="./javascript/autoSlider.js"></script>
   </body>
 </html>

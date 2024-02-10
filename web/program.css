@@ -72,15 +72,7 @@
   width: 30px;
 }
 
-/* filter-section */
-.filter-section {
-  width: 70vw;
-  display: flex;
-  justify-content: space-between;
-  margin: 5vh auto;
-}
-
-/* program-grid */
+/* program-section*/
 .program-section {
   background-color: antiquewhite;
   height: 200vh;
@@ -117,5 +109,5 @@
 }
 
 .program-content:hover {
-  background-color: lightblue; /* Change the background color on hover */
+  background-color: lightblue;
 }
