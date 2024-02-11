@@ -122,7 +122,7 @@ include 'header.php';
     <script type="module" src="./javascript/autoSlider.js"></script>
     <script>
       function specificPage(rowId) {
-          window.location.href = 'specificProgramPage.php?id=' + rowId;
+        window.location.href = 'specificProgramPage.php?id=' + rowId;
       }
     </script>
   </body>

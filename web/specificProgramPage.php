@@ -49,5 +49,6 @@ include 'header.php';
         echo "<p>Error: Missing ID parameter.</p>";
     }
     ?>
+    <?php include 'footer.html' ?>
 </body>
 </html>
