@@ -65,18 +65,19 @@ include 'header.php';
       <li></li>
     </ul>
 
-    <div id="sort-section">
-      <form action="" method="GET" id="sortForm">
-        <select name="sort-list" id="sort-list" onchange="document.getElementById('sortForm').submit()">
-          <option value="default" <?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "default") { echo "selected"; }?>>Default</option>
-          <option value="a-z" <?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "a-z") { echo "selected"; }?>>A-Z</option>
-          <option value="z-a"<?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "z-a") { echo "selected"; }?>>Z-A</option>
-          <option value="date-asc" <?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "date-asc") { echo "selected"; }?>>Sort by Date</option>
-        </select>
-      </form>
-    </div>
-
     <div class="program-section">
+      <div class="sort-section">
+        <h3>View As: </h3>
+        <form action="" method="GET" id="sortForm">
+          <select name="sort-list" id="sort-list" onchange="document.getElementById('sortForm').submit()">
+            <option value="default" <?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "default") { echo "selected"; }?>>Default</option>
+            <option value="a-z" <?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "a-z") { echo "selected"; }?>>A-Z</option>
+            <option value="z-a"<?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "z-a") { echo "selected"; }?>>Z-A</option>
+            <option value="date-asc" <?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "date-asc") { echo "selected"; }?>>Sort by Date</option>
+          </select>
+        </form>
+      </div>
+
       <?php 
         $sort_option = "SELECT * FROM program ORDER BY id ASC";
         if(isset($_GET["sort-list"]))
@@ -94,7 +95,6 @@ include 'header.php';
         $result = $connection->query($sort_option); 
       ?>
 
-      <!-- Display images with BLOB data from database -->
       <?php if($result->num_rows > 0){ ?> 
           <ul>
             <?php while($row = $result->fetch_assoc()){ ?> 

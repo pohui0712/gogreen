@@ -72,14 +72,22 @@
   width: 30px;
 }
 
-/* sort-section */
-
 /* program-section*/
-.program-section {
-  background-color: antiquewhite;
-  height: 200vh;
+
+/* sorting */
+.sort-section {
+  margin: 5vh 5vw;
+  gap: 1vw;
+  display: flex;
+  justify-content: flex-end;
 }
 
+#sort-list {
+  width: 10vw;
+  padding: 1vh;
+}
+
+/* program div */
 .program-section ul {
   list-style: none;
   padding: 0;
@@ -94,6 +102,7 @@
 }
 
 .program-content {
+  background-color: aliceblue;
   width: 30vw;
   height: 60vh;
   display: flex;
