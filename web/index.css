@@ -270,7 +270,7 @@ body#non-scroll.active {
   border-color: #ffffff;
 }
 
-form {
+.login-form {
   background-color: #ffffff;
   display: flex;
   align-items: center;
