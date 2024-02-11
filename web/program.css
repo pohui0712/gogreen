@@ -36,6 +36,7 @@
 }
 
 .slider-button button {
+  display: none; /*Cancel the button*/
   width: 30px;
   height: 30px;
   border-radius: 50%;
