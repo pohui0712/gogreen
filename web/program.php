@@ -13,6 +13,10 @@ include 'header.php';
       href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap"
       rel="stylesheet"
     />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <style>
       * {
         margin: 0;
@@ -99,7 +103,7 @@ include 'header.php';
           <ul>
             <?php while($row = $result->fetch_assoc()){ ?> 
                 <li>
-                  <div class="program-content">
+                  <div class="program-content" onclick="specificPage(<?php echo $row['id']; ?>);" >
                     <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" />
                     <h3><?php echo $row['name']; ?></h3>
                     <p><b>Date: </b><?php echo $row['date']; ?></p>
@@ -116,6 +120,11 @@ include 'header.php';
     </div>
     <?php include 'footer.html' ?>
     <script type="module" src="./javascript/autoSlider.js"></script>
+    <script>
+      function specificPage(rowId) {
+          window.location.href = 'specificProgramPage.php?id=' + rowId;
+      }
+    </script>
   </body>
 </html>
 
