@@ -109,7 +109,7 @@ include 'header.php';
                     <p><b>Date: </b><?php echo $row['date']; ?></p>
                     <p><b>Time: </b><?php echo $row['time']; ?></p>
                     <p><b>Location: </b><?php echo $row['location']; ?></p>
-                    <p><b>Description: </b><?php echo $row['description']; ?></p>
+                    <!-- <p><b>Description: </b><?php echo $row['description']; ?></p> -->
                   </div>
                 </li>
             <?php } ?> 
@@ -122,7 +122,8 @@ include 'header.php';
     <script type="module" src="./javascript/autoSlider.js"></script>
     <script>
       function specificPage(rowId) {
-        window.location.href = 'specificProgramPage.php?id=' + rowId;
+        var url = 'specificProgramPage.php?id=' + rowId;
+        window.open(url, '_blank');
       }
     </script>
   </body>
