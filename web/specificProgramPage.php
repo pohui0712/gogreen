@@ -28,10 +28,9 @@ include 'header.php';
         width: 100%;
         background-color: honeydew;
         font-family: "Playpen Sans";
-    
+      }
         <?php include 'specificProgramPage.css'?>
         <?php include 'index.css'?>
-      }
     </style>
     <title>Document</title>
 </head>
