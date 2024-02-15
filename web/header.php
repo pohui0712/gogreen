@@ -34,7 +34,7 @@ session_start();
             <li><a href="about.php">About Us</a></li>
             <li><a href="program.php">Services</a></li>
             <li><a href="donate.php">Donate</a></li>
-            <li><a href="#blur-contact">Contact</a></li>
+            <li><a href="home.php#blur-contact">Contact</a></li>
           </ul>
           <?php
           if (isset($_GET['logout'])) {

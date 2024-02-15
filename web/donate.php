@@ -1,7 +1,6 @@
 <?php 
 include './php/dbConn.php';
 session_start();
-include 'header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +19,6 @@ include 'header.php';
     />
     <style>
       body {
-        margin: 0;
         background: linear-gradient(#fefae0, #ccd5ae);
         font-family: "Playpen Sans";
       }
@@ -30,6 +28,7 @@ include 'header.php';
     <title>Document</title>
   </head>
   <body>
+    <?php include 'header.php' ?>
     <div class="grid-template">
       <h1>Green GoProgram</h1>
       <p>
@@ -102,7 +101,7 @@ include 'header.php';
       </div>
     </div>
 
-    <div class="donate-page">
+    <div class="donate-page" id="paymentPage">
       <form action='./php/donation.php' method='post'>
         <div class="card-information">
           <h2>Payment Information</h2>

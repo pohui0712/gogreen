@@ -46,8 +46,8 @@ camera.position.y = 9000;
 function animate() {
   camera.updateProjectionMatrix();
   requestAnimationFrame(animate);
-  earthMesh.rotation.x += 0.0015;
-  earthMesh.rotation.y += 0.00035;
+  earthMesh.rotation.x += 0.003;
+  earthMesh.rotation.y += 0.0035;
   earthMesh.rotation.z += 0.002;
 
   controls.update();
