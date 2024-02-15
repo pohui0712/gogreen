@@ -1,6 +1,5 @@
 <?php
 include './php/dbConn.php';
-session_start();
 ?>
 
 <!DOCTYPE html>
