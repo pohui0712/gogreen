@@ -12,13 +12,25 @@ session_start();
       href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="program.css" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <style>
-      body {
+      * {
         margin: 0;
-        font-family: "Playpen Sans";
-        /* box-sizing: border-box; */
+        padding: 0;
+        box-sizing: border-box;
       }
+      
+      body {
+        height: 100vh;
+        width: 100%;
+        background-color: honeydew;
+        font-family: "Playpen Sans";
+      }
+      <?php include 'index.css' ?>
+      <?php include 'program.css' ?>
     </style>
     <title>Document</title>
   </head>
@@ -57,52 +69,63 @@ session_start();
       <li></li>
     </ul>
 
-    <div class="filter-section">
-      <h4 id='result-counter'>
-        Showing 1 -
-        <span id='total-count'>9</span>
-        of
-        <span id='total-redult'>9</span>
-        Result
-      </h4>
+    <div class="program-section">
+      <div class="sort-section">
+        <h3>View As: </h3>
+        <form action="" method="GET" id="sortForm">
+          <select name="sort-list" id="sort-list" onchange="document.getElementById('sortForm').submit()">
+            <option value="default" <?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "default") { echo "selected"; }?>>Default</option>
+            <option value="a-z" <?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "a-z") { echo "selected"; }?>>A-Z</option>
+            <option value="z-a"<?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "z-a") { echo "selected"; }?>>Z-A</option>
+            <option value="date-asc" <?php if(isset($_GET["sort-list"]) && $_GET["sort-list"] == "date-asc") { echo "selected"; }?>>Sort by Date</option>
+          </select>
+        </form>
+      </div>
 
-      <div class='sortOption-container'>
-        <option value="Default">Default</option>
-        <option value="highToLow">Sort by price: high to low</option>
-        <option value="lowToHigh">Sort by price: low to</option>
-      </div>
-    </div>
+      <?php 
+        $sort_option = "SELECT * FROM program ORDER BY id ASC";
+        if(isset($_GET["sort-list"]))
+        {
+          if($_GET["sort-list"] == "default"){
+            $sort_option = "SELECT * FROM program ORDER BY id ASC";
+          } elseif($_GET["sort-list"] == "a-z"){
+            $sort_option = "SELECT * FROM program ORDER BY name ASC";
+          } elseif($_GET["sort-list"] == "z-a"){
+            $sort_option = "SELECT * FROM program ORDER BY name DESC";
+          } elseif($_GET["sort-list"] == "date-asc"){
+            $sort_option = "SELECT * FROM program ORDER BY date ASC";
+          }
+        }
+        $result = $connection->query($sort_option); 
+      ?>
 
-    <div class="program-grid">
-      <div class="program program-1">
-        <img src="images/beach.jpeg" alt="" />
-      </div>
-      <div class="program program-2">
-        <img src="images/beachCleaning.png" alt="" />
-      </div>
-      <div class="program program-3">
-        <img src="images/greenCampaign.jpg" alt="" />
-      </div>
-      <div class="program program-4">
-        <img src="images/kidsRecyclingProgram.png" alt="" />
-      </div>
-      <div class="program program-5">
-        <img src="images/programGridCleanRubbish.jpg" alt="" />
-      </div>
-      <div class="program program-6">
-        <img src="images/programGridCraftTree.jpg" alt="" />
-      </div>
-      <div class="program program-7">
-        <img src="images/schoolCampaign.jpeg" alt="" />
-      </div>
-      <div class="program program-8">
-        <img src="images/together.jpg" alt="" />
-      </div>
-      <div class="program program-9">
-        <img src="images/treePlanting.jpg" alt="" />
-      </div>
+      <?php if($result->num_rows > 0){ ?> 
+          <ul>
+            <?php while($row = $result->fetch_assoc()){ ?> 
+                <li>
+                  <div class="program-content" onclick="specificPage(<?php echo $row['id']; ?>);" >
+                    <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['image']); ?>" />
+                    <h3><?php echo $row['name']; ?></h3>
+                    <p><b>Date: </b><?php echo $row['date']; ?></p>
+                    <p><b>Time: </b><?php echo $row['time']; ?></p>
+                    <p><b>Location: </b><?php echo $row['location']; ?></p>
+                    <!-- <p><b>Description: </b><?php echo $row['description']; ?></p> -->
+                  </div>
+                </li>
+            <?php } ?> 
+          </ul>
+      <?php }else{ ?> 
+          <p class="status error">Image(s) not found...</p> 
+      <?php } ?>
     </div>
+    <?php include 'footer.html' ?>
     <script type="module" src="./javascript/autoSlider.js"></script>
+    <script>
+      function specificPage(rowId) {
+        var url = 'specificProgramPage.php?id=' + rowId;
+        window.open(url, '_blank');
+      }
+    </script>
   </body>
 </html>
 

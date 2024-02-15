@@ -32,7 +32,7 @@ session_start();
           </a>
           <ul class="links">
             <li><a href="about.php">About Us</a></li>
-            <li><a href="program.php">Services</a></li>
+            <li><a href="program.php">Programs</a></li>
             <li><a href="donate.php">Donate</a></li>
             <li><a href="home.php#blur-contact">Contact</a></li>
           </ul>
@@ -60,7 +60,7 @@ session_start();
         <div id="login-page">
           <div class="container" id="container">
             <div class="form-container sign-up-container">
-              <form action="./php/signUp.php" method="post">
+              <form class="login-form" action="./php/signUp.php" method="post">
                 <i class="fa-solid fa-xmark" id="close-btn-sign-up"></i>
                 <h1>Create Account</h1>
                 <div class="social-container">
@@ -93,7 +93,7 @@ session_start();
               </form>
             </div>
             <div class="form-container sign-in-container">
-              <form action="./php/signIn.php" method="post">
+              <form class="login-form" action="./php/signIn.php" method="post">
                 <h1>Sign in</h1>
                 <div class="social-container">
                   <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>

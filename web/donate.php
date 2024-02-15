@@ -18,10 +18,6 @@ session_start();
       rel="stylesheet"
     />
     <style>
-      body {
-        background: linear-gradient(#fefae0, #ccd5ae);
-        font-family: "Playpen Sans";
-      }
       <?php include 'index.css' ?>
       <?php include 'donate.css' ?>
     </style>

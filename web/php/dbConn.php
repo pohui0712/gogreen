@@ -2,7 +2,7 @@
 $serverName = 'localhost';
 $username = 'root';
 $password = '';
-$database = 'GoGreen';
+$database = 'gogreen';
 
 $connection = mysqli_connect($serverName, $username, $password, $database);
 
