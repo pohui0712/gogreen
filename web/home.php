@@ -242,6 +242,10 @@ session_start();
     <script type="module" src="./javascript/earthModel.js"></script>
     <script type="module" src="./javascript/blurbackground.js"></script>
     <script type="module" src="./javascript/loginPage.js"></script>
-    <script type="module" src="./javascript/animation.js"></script>
+    <script>
+        document.getElementById("button").addEventListener("click", function() {
+            document.getElementById("blur-contact").scrollIntoView({ behavior: "smooth" });
+        });
+    </script>
   </body>
 </html>

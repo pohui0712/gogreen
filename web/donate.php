@@ -1,7 +1,6 @@
 <?php 
 include './php/dbConn.php';
 session_start();
-include 'header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,24 +18,13 @@ include 'header.php';
       rel="stylesheet"
     />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        height: 100vh;
-        width: 100%;
-        background-color: honeydew;
-        font-family: "Playpen Sans";
-      }
       <?php include 'index.css' ?>
       <?php include 'donate.css' ?>
     </style>
     <title>Document</title>
   </head>
   <body>
+    <?php include 'header.php' ?>
     <div class="grid-template">
       <h1>Green GoProgram</h1>
       <p>
@@ -109,7 +97,7 @@ include 'header.php';
       </div>
     </div>
 
-    <div class="donate-page">
+    <div class="donate-page" id="paymentPage">
       <form action='./php/donation.php' method='post'>
         <div class="card-information">
           <h2>Payment Information</h2>

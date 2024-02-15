@@ -1,7 +1,6 @@
 <?php 
 include './php/dbConn.php';
 session_start();
-include 'header.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +35,7 @@ include 'header.php';
     <title>Document</title>
   </head>
   <body>
+    <?php include 'header.php' ?>
     <div class="slider">
       <div class="slider-list">
         <div class="slider-item">

@@ -37,7 +37,7 @@ if (isset($_SESSION['email'])) {
     echo '<script> 
     setTimeout(function() {
         alert("Please sign in before donating"); 
-        window.location.href = "../home.php";
+        window.location.href = "../donate.php#paymentPage";
     }, 100);
     </script>';
 
