@@ -18,7 +18,18 @@ session_start();
       rel="stylesheet"
     />
     <style>
-
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        height: 100vh;
+        width: 100%;
+        background-color: honeydew;
+        font-family: "Playpen Sans";
+      }
       <?php include 'index.css' ?>
       <?php include 'donate.css' ?>
     </style>
