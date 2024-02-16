@@ -31,5 +31,9 @@ body {
 #adding-table {
   flex: 1; /* Take remaining space */
   padding: 5vh;
+  width: 80vw;
   display: none;
+}
+
+#input-form {
 }

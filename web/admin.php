@@ -81,34 +81,35 @@ include './php/dbConn.php';
                 ?>
             </table>
         </div>
-        </div>
         <div id="adding-table">
             <form action="./php/upload.php" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label>Select Image File:</label>
-                    <input type="file" name="image">
+                <div id="input-form">
+                    <div class="form-group">
+                        <label>Select Image File:</label>
+                        <input type="file" name="image">
+                    </div>
+                    <div class="form-group">
+                        <label>Program Name:</label>
+                        <input type="text" name="programName">
+                    </div>
+                    <div class="form-group">
+                        <label>Program Date:</label>
+                        <input type="date" name="programDate">
+                    </div>
+                    <div class="form-group">
+                        <label>Program Time:</label>
+                        <input type="time" name="programTime">
+                    </div>
+                    <div class="form-group">
+                        <label>Program Location:</label>
+                        <input type="text" name="programLocation">
+                    </div>
+                    <div class="form-group">
+                        <label>Program Description:</label>
+                        <input type="text" name="programDescription">
+                    </div>
+                    <input type="submit" name="submit" value="Upload">
                 </div>
-                <div class="form-group">
-                    <label>Program Name:</label>
-                    <input type="text" name="programName">
-                </div>
-                <div class="form-group">
-                    <label>Program Date:</label>
-                    <input type="date" name="programDate">
-                </div>
-                <div class="form-group">
-                    <label>Program Time:</label>
-                    <input type="time" name="programTime">
-                </div>
-                <div class="form-group">
-                    <label>Program Location:</label>
-                    <input type="text" name="programLocation">
-                </div>
-                <div class="form-group">
-                    <label>Program Description:</label>
-                    <input type="text" name="programDescription">
-                </div>
-                <input type="submit" name="submit" value="Upload">
             </form>
         </div>
     </div>
