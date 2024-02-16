@@ -22,7 +22,7 @@ include './php/dbConn.php';
         <?php include 'index.css'?>
       </style>
   </head>
-  <body>
+  <body id="blur-start">
       <header>
         <nav class="navbar" id="blur-header">
           <a href="home.php" class="logo">
@@ -142,5 +142,5 @@ include './php/dbConn.php';
         </div>
       </header> 
   </body>
-<script type="module" src="./javascript/loginPage.js"></script>
+  <script type="module" src="./javascript/loginPage.js"></script>
 </html>
