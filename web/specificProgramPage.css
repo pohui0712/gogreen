@@ -1,16 +1,24 @@
 .click-content {
   height: 80vh;
-  margin: 10vh 5vw 0 5vw;
+  margin-top: 10vh;
   display: flex;
-  gap: 10vw;
 }
 
-.click-content img {
+.specificProgram-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.specificProgram-img img {
   max-width: 100%;
 }
 
 .content-information {
-  width: 40vw;
+  flex: 1;
+  width: 20vw;
+  margin-top: 5vh;
 }
 
 #specific-name {
@@ -19,12 +27,17 @@
 }
 
 #other-information {
-  margin: 10vh 0;
+  margin: 8vh 0;
   font-size: 1.2vw;
 }
 
 #other-information p {
+  text-align: center;
   margin: 2vh;
+}
+
+#join-btn-container {
+  text-align: center;
 }
 
 #join-btn {
@@ -38,7 +51,7 @@
   border: 2px solid #606c38;
   border-radius: 20px;
   transition: 0.3s;
-  margin-left: 15vw; /*How to text-align to center?*/
+  align-items: center;
 }
 
 #join-btn:hover {

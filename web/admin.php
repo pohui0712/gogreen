@@ -7,10 +7,14 @@ include './php/dbConn.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        <?php include 'admin.css' ?>
+    </style>
     <title>Document</title>
 </head>
 <body>
-<div class="conatienr">
+
+<!-- <div class="conatienr">
     <form action="./php/upload.php" method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label>Select Image File:</label>
@@ -38,6 +42,8 @@ include './php/dbConn.php';
         </div>
         <input type="submit" name="submit" value="Upload">
     </form>
-</div>
+</div> -->
+
+
 </body>
 </html>

@@ -49,10 +49,12 @@ include 'header.php';
                 $row = $result->fetch_assoc();
 ?>
                 <div class="click-content">
-                    <?php if (!empty($row['image'])) {
-                        $base64Image = base64_encode($row['image']);
-                        echo "<img src='data:image/jpg;base64,$base64Image' alt='Program Image'>";
-                    } ?>
+                    <div class="specificProgram-img">
+                        <?php if (!empty($row['image'])) {
+                            $base64Image = base64_encode($row['image']);
+                            echo "<img src='data:image/jpg;base64,$base64Image' alt='Program Image'>";
+                        } ?>
+                    </div>
                     
                     <div class="content-information">
                         <p id="specific-name"><b><?php echo $row['name']; ?></b></p>
@@ -62,7 +64,9 @@ include 'header.php';
                             <p><i class='fa-solid fa-location-dot'></i><b>Location: </b><?php echo $row['location']; ?></p>
                             <p><i class='fa-solid fa-circle-info'></i><b>Description: </b><?php echo $row['description']; ?></p>
                         </div>
-                        <form action="./php/joinProgram.php"><button id="join-btn">JOIN</button></form>
+                        <div id="join-btn-container">
+                            <form action="./php/joinProgram.php"><button id="join-btn">JOIN</button></form>
+                        </div>
                     </div>
                 </div>
     <?php
