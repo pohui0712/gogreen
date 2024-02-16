@@ -1,6 +1,5 @@
 <?php
 include './php/dbConn.php';
-session_start();
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +22,7 @@ session_start();
         <?php include 'index.css'?>
       </style>
   </head>
-  <body>
+  <body id="blur-start">
       <header>
         <nav class="navbar" id="blur-header">
           <a href="home.php" class="logo">
@@ -143,5 +142,5 @@ session_start();
         </div>
       </header> 
   </body>
-<script type="module" src="./javascript/loginPage.js"></script>
+  <script type="module" src="./javascript/loginPage.js"></script>
 </html>

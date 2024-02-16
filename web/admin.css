@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.admin-container {
+  display: flex;
+}
+
+.admin-option {
+  flex: 0 0 16vw; /* Fixed width for admin-option */
+  display: flex;
+  flex-direction: column;
+  padding: 5vh;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+#account-table {
+  flex: 1; /* Take remaining space */
+  padding: 5vh;
+  display: block;
+}
+
+#program-table {
+  flex: 1; /* Take remaining space */
+  padding: 5vh;
+  display: none;
+}
+
+#adding-table {
+  flex: 1; /* Take remaining space */
+  padding: 5vh;
+  width: 80vw;
+  display: none;
+}
+
+#input-form {
+}

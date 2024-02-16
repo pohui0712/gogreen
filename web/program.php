@@ -123,7 +123,8 @@ session_start();
     <script>
       function specificPage(rowId) {
         var url = 'specificProgramPage.php?id=' + rowId;
-        window.open(url, '_blank');
+        // window.open(url, '_blank');
+        window.location.href = url;
       }
     </script>
   </body>
