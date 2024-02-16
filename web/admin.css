@@ -8,16 +8,28 @@ body {
 }
 
 .admin-option {
-  flex: 1;
+  flex: 0 0 16vw; /* Fixed width for admin-option */
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 5vh;
+  height: 100vh;
   background-color: #f0f0f0;
 }
 
-.option-content {
-  flex: 1;
-  padding: 20px;
-  background-color: #e0e0e0;
-  display: none; /* initially hide the content */
+#account-table {
+  flex: 1; /* Take remaining space */
+  padding: 5vh;
+  display: block;
+}
+
+#program-table {
+  flex: 1; /* Take remaining space */
+  padding: 5vh;
+  display: none;
+}
+
+#adding-table {
+  flex: 1; /* Take remaining space */
+  padding: 5vh;
+  display: none;
 }
