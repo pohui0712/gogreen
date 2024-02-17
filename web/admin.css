@@ -116,3 +116,9 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #45a049;
 }
+
+#sort-prorgam {
+  gap: 1vw;
+  width: 10vw;
+  padding: 1vh;
+}

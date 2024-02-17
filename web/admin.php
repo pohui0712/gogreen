@@ -1,9 +1,10 @@
-<?php 
+<?php
 include './php/dbConn.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@ include './php/dbConn.php';
     </style>
     <title>Document</title>
 </head>
+
 <body>
 
     <div class="admin-container">
@@ -32,24 +34,24 @@ include './php/dbConn.php';
                     <th>Donation</th>
                 </tr>
                 <?php
-                    $accountSQL = "SELECT * FROM testingvolunteers";
-                    $accountResult = $connection->query($accountSQL);
+                $accountSQL = "SELECT * FROM testingvolunteers";
+                $accountResult = $connection->query($accountSQL);
 
-                    if ($accountResult->num_rows > 0) {
-                        while($row = $accountResult->fetch_assoc()) {
-                            echo "<tr>";
-                            echo "<td>" . $row["userID"] . "</td>";
-                            echo "<td>" . $row["username"] . "</td>";
-                            echo "<td>" . $row["email"] . "</td>";
-                            echo "<td>" . $row["donation"] . "</td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='4'>0 results</td></tr>";
-                    } 
+                if ($accountResult->num_rows > 0) {
+                    while ($row = $accountResult->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row["userID"] . "</td>";
+                        echo "<td>" . $row["username"] . "</td>";
+                        echo "<td>" . $row["email"] . "</td>";
+                        echo "<td>" . $row["donation"] . "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='4'>0 results</td></tr>";
+                }
                 ?>
             </table>
-            
+
         </div>
         <div id="program-table">
             <h1>program</h1>
@@ -63,29 +65,56 @@ include './php/dbConn.php';
                     <th>Description</th>
                 </tr>
                 <?php
-                    $programSQL = "SELECT * FROM program";
-                    $programResult = $connection->query($programSQL);
-                    
-                    if ($programResult->num_rows > 0) {
-                        while($row = $programResult->fetch_assoc()) {
-                            echo "<tr>";
-                            echo "<td>" . $row["id"] . "</td>";
-                            echo "<td>" . $row["name"] . "</td>";
-                            echo "<td>" . $row["date"] . "</td>";
-                            echo "<td>" . $row["time"] . "</td>";
-                            echo "<td>" . $row["location"] . "</td>";
-                            echo "<td>" . $row["description"] . "</td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='4'>0 results</td></tr>";
-                    } 
-                    ?>
+                $programSQL = "SELECT * FROM program";
+                $programResult = $connection->query($programSQL);
+
+                if ($programResult->num_rows > 0) {
+                    while ($row = $programResult->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row["id"] . "</td>";
+                        echo "<td>" . $row["name"] . "</td>";
+                        echo "<td>" . $row["date"] . "</td>";
+                        echo "<td>" . $row["time"] . "</td>";
+                        echo "<td>" . $row["location"] . "</td>";
+                        echo "<td>" . $row["description"] . "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='4'>0 results</td></tr>";
+                }
+                ?>
             </table>
         </div>
+
         <div id="joined-table">
             <?php
-                $joinedSQL = "
+            $sortingSQL = "SELECT DISTINCT name FROM program ORDER BY name ASC";
+            $sortingResult = $connection->query($sortingSQL);
+            ?>
+            <div>
+                <h3>Select program to view member: </h3>
+                <form action="" method="GET" id="sortForm">
+                    <select name="sort-list" id="sort-prorgam" onchange="document.getElementById('sortForm').submit()">
+                        <option value="default" <?php if (!isset($_GET["sort-list"]) || $_GET["sort-list"] == "default") {
+                            echo "selected";
+                        } ?>>Default</option>
+                        <?php
+                        if ($sortingResult->num_rows > 0) {
+                            while ($row = $sortingResult->fetch_assoc()) {
+                                $programName = $row["name"];
+                                echo "<option value='$programName' " . (isset($_GET["sort-list"]) && $_GET["sort-list"] == $programName ? "selected" : "") . ">$programName</option>";
+                            }
+                        }
+                        ?>
+                    </select>
+                </form>
+            </div>
+            <?php
+            // Fetch selected program name from the sorting form
+            $selectedProgram = isset($_GET["sort-list"]) ? $_GET["sort-list"] : "default";
+
+            // SQL query to get program details based on selected program name
+            $joinedSQL = "
                     SELECT
                         pm.program_id,
                         p.name AS program_name,
@@ -94,9 +123,13 @@ include './php/dbConn.php';
                     FROM
                         program_member pm
                     JOIN program p ON pm.program_id = p.id
-                    JOIN testingvolunteers tv ON pm.joinUser_id = tv.userID;
-                ";
-            ?> 
+                    JOIN testingvolunteers tv ON pm.joinUser_id = tv.userID
+                    " . ($selectedProgram !== "default" ? "WHERE p.name = '$selectedProgram'" : "") . "
+                    ORDER BY p.id ASC";
+
+            $joinedResult = $connection->query($joinedSQL);
+            ?>
+
             <table border="1">
                 <tr>
                     <th>Program ID</th>
@@ -104,24 +137,24 @@ include './php/dbConn.php';
                     <th>UserID</th>
                     <th>Username</th>
                 </tr>
-                
+
                 <?php
-                    $joinedResult = $connection->query($joinedSQL);
-                    if ($joinedResult->num_rows > 0) {
-                        while ($row = $joinedResult->fetch_assoc()) {
-                            echo "<tr>";
-                            echo "<td>" . $row["program_id"] . "</td>";
-                            echo "<td>" . $row["program_name"] . "</td>";
-                            echo "<td>" . $row["joinUser_id"] . "</td>";
-                            echo "<td>" . $row["username"] . "</td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='4'>0 results</td></tr>";
+                if ($joinedResult->num_rows > 0) {
+                    while ($row = $joinedResult->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row["program_id"] . "</td>";
+                        echo "<td>" . $row["program_name"] . "</td>";
+                        echo "<td>" . $row["joinUser_id"] . "</td>";
+                        echo "<td>" . $row["username"] . "</td>";
+                        echo "</tr>";
                     }
+                } else {
+                    echo "<tr><td colspan='4'>0 results</td></tr>";
+                }
                 ?>
             </table>
         </div>
+
         <div id="adding-table">
             <form action="./php/upload.php" method="post" enctype="multipart/form-data">
                 <div id="input-form">
@@ -155,8 +188,9 @@ include './php/dbConn.php';
         </div>
     </div>
 
+
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             var viewAccount = document.getElementById("view-account");
             var viewProgram = document.getElementById("view-program");
             var addProgram = document.getElementById("add-program");
@@ -167,38 +201,46 @@ include './php/dbConn.php';
             var addingTable = document.getElementById("adding-table");
             var joinedTable = document.getElementById("joined-table");
 
-            viewAccount.addEventListener("click", function() {
+            viewAccount.addEventListener("click", function () {
                 accountTable.style.display = "block";
                 programTable.style.display = "none";
                 addingTable.style.display = "none";
                 joinedTable.style.display = "none";
             });
 
-            viewProgram.addEventListener("click", function() {
+            viewProgram.addEventListener("click", function () {
                 accountTable.style.display = "none";
                 programTable.style.display = "block";
                 addingTable.style.display = "none";
                 joinedTable.style.display = "none";
             });
 
-            addProgram.addEventListener("click", function() {
+            addProgram.addEventListener("click", function () {
                 accountTable.style.display = "none";
                 programTable.style.display = "none";
                 addingTable.style.display = "block";
                 joinedTable.style.display = "none";
             });
 
-            joinedProgram.addEventListener("click", function() {
+            joinedProgram.addEventListener("click", function () {
                 accountTable.style.display = "none";
                 programTable.style.display = "none";
                 addingTable.style.display = "none";
                 joinedTable.style.display = "block";
             });
+
+            var urlParams = new URLSearchParams(window.location.search);
+            var sortListValue = urlParams.get("sort-list");
+
+            if (sortListValue) {
+                accountTable.style.display = "none";
+                programTable.style.display = "none";
+                addingTable.style.display = "none";
+                joinedTable.style.display = "block";
+            }
         });
     </script>
 
 </body>
-</html>
 
-</body>
 </html>
