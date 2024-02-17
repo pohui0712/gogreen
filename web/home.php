@@ -230,7 +230,7 @@ session_start();
               cols="30"
               placeholder="Tell us what you think"
             ></textarea>
-          <button id="submitButton" name="submit">Submit</button>
+          <button id="submitButton" name="submitEmail">Submit</button>
           <?php 
             if(isset($_SESSION['success_message'])) {
               echo '<script> alert("' . $_SESSION['success_message'] . '"); </script>';
@@ -238,9 +238,9 @@ session_start();
             }
             if(isset($_SESSION['error_message'])) {
               echo '<script> alert("' . $_SESSION['error_message'] . '"); </script>';
-              unset($_SESSION['success_message']);
+              unset($_SESSION['error_message']);
             }
-            ?>
+          ?>
         </form>
       </div>
         <div class="image-container">
