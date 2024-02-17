@@ -104,24 +104,24 @@ session_start();
           <h2>Payment Information</h2>
           <div class="input-information">
             <label for="donate-amount">AMOUNT</label>
-            <input type="text" placeholder="DONATE AMOUNT" name="donateAmount"/>
+            <input type="text" placeholder="DONATE AMOUNT" name="donateAmount" required/>
           </div>
           <div class="input-information">
             <label for="cardholder-name">CARDHOLDER NAME</label><br />
-            <input type="text" placeholder="NAME" name="cardName"/>
+            <input type="text" placeholder="NAME" name="cardName" required/>
           </div>
           <div class="input-information">
             <label for="card-name">CARD NAME</label><br />
-            <input type="text" placeholder="1234 1234 1234 1234" name="cardNumber" id="cardNumber"/>
+            <input type="text" placeholder="1234 1234 1234 1234" name="cardNumber" id="cardNumber" required/>
           </div>
           <div id="test">
             <div class="input-information">
               <label for="expiration">EXPIRATION</label><br />
-              <input type="text" placeholder="MM / YY" name="expiration" id="expiration"/>
+              <input type="text" placeholder="MM / YY" name="expiration" id="expiration" required/>
             </div>
             <div class="input-information">
               <label for="CVC">CVC</label><br />
-              <input type="text" placeholder="CVC" name="cvc" id="cvc"/>
+              <input type="text" placeholder="CVC" name="cvc" id="cvc" required/>
             </div>
           </div>
             <div class="donate-btn">
