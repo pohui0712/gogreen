@@ -19,11 +19,12 @@ include './php/dbConn.php';
             <h1>Your Page Title</h1>
             <h3 id="view-account">View User's Account</h3>
             <h3 id="view-program">View Programs</h3>
+            <h3 id="joined-member">View Joined Programs' Member</h3>
             <h3 id="add-program">Add Program</h3>
         </div>
         <div id="account-table">
             <h1>Registered User</h1>
-            <table border="1">
+            <table>
                 <tr>
                     <th>UserID</th>
                     <th>Username</th>
@@ -48,6 +49,7 @@ include './php/dbConn.php';
                     } 
                 ?>
             </table>
+            
         </div>
         <div id="program-table">
             <h1>program</h1>
@@ -63,7 +65,7 @@ include './php/dbConn.php';
                 <?php
                     $programSQL = "SELECT * FROM program";
                     $programResult = $connection->query($programSQL);
-
+                    
                     if ($programResult->num_rows > 0) {
                         while($row = $programResult->fetch_assoc()) {
                             echo "<tr>";
@@ -78,6 +80,45 @@ include './php/dbConn.php';
                     } else {
                         echo "<tr><td colspan='4'>0 results</td></tr>";
                     } 
+                    ?>
+            </table>
+        </div>
+        <div id="joined-table">
+            <?php
+                $joinedSQL = "
+                    SELECT
+                        pm.program_id,
+                        p.name AS program_name,
+                        pm.joinUser_id,
+                        tv.username
+                    FROM
+                        program_member pm
+                    JOIN program p ON pm.program_id = p.id
+                    JOIN testingvolunteers tv ON pm.joinUser_id = tv.userID;
+                ";
+            ?> 
+            <table border="1">
+                <tr>
+                    <th>Program ID</th>
+                    <th>Program Name</th>
+                    <th>UserID</th>
+                    <th>Username</th>
+                </tr>
+                
+                <?php
+                    $joinedResult = $connection->query($joinedSQL);
+                    if ($joinedResult->num_rows > 0) {
+                        while ($row = $joinedResult->fetch_assoc()) {
+                            echo "<tr>";
+                            echo "<td>" . $row["program_id"] . "</td>";
+                            echo "<td>" . $row["program_name"] . "</td>";
+                            echo "<td>" . $row["joinUser_id"] . "</td>";
+                            echo "<td>" . $row["username"] . "</td>";
+                            echo "</tr>";
+                        }
+                    } else {
+                        echo "<tr><td colspan='4'>0 results</td></tr>";
+                    }
                 ?>
             </table>
         </div>
@@ -119,27 +160,39 @@ include './php/dbConn.php';
             var viewAccount = document.getElementById("view-account");
             var viewProgram = document.getElementById("view-program");
             var addProgram = document.getElementById("add-program");
+            var joinedProgram = document.getElementById("joined-member");
 
             var accountTable = document.getElementById("account-table");
             var programTable = document.getElementById("program-table");
             var addingTable = document.getElementById("adding-table");
+            var joinedTable = document.getElementById("joined-table");
 
             viewAccount.addEventListener("click", function() {
                 accountTable.style.display = "block";
                 programTable.style.display = "none";
                 addingTable.style.display = "none";
+                joinedTable.style.display = "none";
             });
 
             viewProgram.addEventListener("click", function() {
                 accountTable.style.display = "none";
                 programTable.style.display = "block";
                 addingTable.style.display = "none";
+                joinedTable.style.display = "none";
             });
 
             addProgram.addEventListener("click", function() {
                 accountTable.style.display = "none";
                 programTable.style.display = "none";
                 addingTable.style.display = "block";
+                joinedTable.style.display = "none";
+            });
+
+            joinedProgram.addEventListener("click", function() {
+                accountTable.style.display = "none";
+                programTable.style.display = "none";
+                addingTable.style.display = "none";
+                joinedTable.style.display = "block";
             });
         });
     </script>
