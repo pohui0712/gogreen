@@ -101,7 +101,7 @@ include './php/dbConn.php';
                 <tr>
                     <th>Program ID</th>
                     <th>Program Name</th>
-                    <th>JoinUser ID</th>
+                    <th>UserID</th>
                     <th>Username</th>
                 </tr>
                 
