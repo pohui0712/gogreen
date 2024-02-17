@@ -16,8 +16,17 @@ if (isset($_POST["signInBtn"])) {
         $_SESSION['password'] = $login['password'];
         $_SESSION['username'] = $login['username'];
         $_SESSION['donation'] = $login['donation'];
-        header("Location: ../home.php");
-        exit();
+
+        if ($login['email'] == 'daniel@gmail.com') {
+            $_SESSION['isAdmin'] = true;
+            header("Location: ../admin.php");
+            exit();
+        } else {
+            $_SESSION['isAdmin'] = false;
+            header("Location: ../home.php");
+            exit();
+        }
+       
     } else {
         $_SESSION['signInError'] = "Invalid credentials, please try again";
         header("Location: ../home.php");

@@ -9,7 +9,6 @@ session_start();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoGreen</title>
-    <!-- <link href="index.css" rel="stylesheet" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -221,16 +220,28 @@ session_start();
       <h1 class="h1Space">GET IN TOUCH!</h1>
       <div class="all">
         <div class="contact-container">
-          <input type="name" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <textarea
-            type="message"
-            rows="10"
-            cols="30"
-            placeholder="Tell us what you think"
-          ></textarea>
-          <button id="submitButton">Submit</button>
-        </div>
+          <form action="./php/send_email.php" method="post">
+            <input type="name" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <textarea
+              type="message"
+              rows="10"
+              cols="30"
+              placeholder="Tell us what you think"
+            ></textarea>
+          <button id="submitButton" name="submitEmail">Submit</button>
+          <?php 
+            if(isset($_SESSION['success_message'])) {
+              echo '<script> alert("' . $_SESSION['success_message'] . '"); </script>';
+              unset($_SESSION['success_message']);
+            }
+            if(isset($_SESSION['error_message'])) {
+              echo '<script> alert("' . $_SESSION['error_message'] . '"); </script>';
+              unset($_SESSION['error_message']);
+            }
+          ?>
+        </form>
+      </div>
         <div class="image-container">
           <img src="./images/together.jpg" />
         </div>

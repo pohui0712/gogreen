@@ -25,7 +25,7 @@ if (isset($_SESSION['email'])) {
 
         if ($result) {
             echo '<script> if (confirm("Donate successfully")) {
-                  window.location.href = "../home.php" }  
+                  window.location.href = "../donate.php" }  
                   </script>';
         } else {
             echo '<script> alert("Fail to donate") </script>';
