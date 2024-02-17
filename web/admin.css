@@ -43,6 +43,13 @@ h3:hover {
   display: none;
 }
 
+#joined-table {
+  flex: 1;
+  padding: 5vh;
+  width: 80vw;
+  display: none;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
