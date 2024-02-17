@@ -21,7 +21,8 @@ h3 {
   transition: color 0.3s ease;
 }
 
-h3:hover {
+h3:hover,
+#logOut:hover {
   color: #4caf50; /* Change to your desired hover color */
 }
 #account-table {
@@ -121,4 +122,9 @@ input[type="submit"]:hover {
   gap: 1vw;
   width: 10vw;
   padding: 1vh;
+}
+
+#logOut {
+  text-decoration: none;
+  color: black;
 }

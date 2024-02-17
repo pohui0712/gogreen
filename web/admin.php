@@ -1,6 +1,8 @@
 <?php
 include './php/dbConn.php';
+session_start();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +25,15 @@ include './php/dbConn.php';
             <h3 id="view-program">View Programs</h3>
             <h3 id="joined-member">View Joined Programs' Member</h3>
             <h3 id="add-program">Add Program</h3>
-            <h3>Log Out</h3>
+            <h3><a href="?logout=true" id='logOut'>Log Out</a></h3>
+            <?php
+            if (isset($_GET['logout'])) {
+                echo '<script>
+                            location.href = "./php/logout.php";
+                        </script>';
+                exit();
+            }
+            ?>
         </div>
         <div id="account-table">
             <h1>Registered User</h1>
