@@ -23,6 +23,7 @@ include './php/dbConn.php';
             <h3 id="view-program">View Programs</h3>
             <h3 id="joined-member">View Joined Programs' Member</h3>
             <h3 id="add-program">Add Program</h3>
+            <h3>Log Out</h3>
         </div>
         <div id="account-table">
             <h1>Registered User</h1>
