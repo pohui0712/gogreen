@@ -171,86 +171,35 @@ session_start();
                 <div id="input-form">
                     <div class="form-group">
                         <label>Select Image File:</label>
-                        <input type="file" name="image">
+                        <input type="file" name="image" required>
                     </div>
                     <div class="form-group">
                         <label>Program Name:</label>
-                        <input type="text" name="programName">
+                        <input type="text" name="programName" required>
                     </div>
                     <div class="form-group">
                         <label>Program Date:</label>
-                        <input type="date" name="programDate">
+                        <input type="date" name="programDate" required>
                     </div>
                     <div class="form-group">
                         <label>Program Time:</label>
-                        <input type="time" name="programTime">
+                        <input type="time" name="programTime" required>
                     </div>
                     <div class="form-group">
                         <label>Program Location:</label>
-                        <input type="text" name="programLocation">
+                        <input type="text" name="programLocation" required>
                     </div>
                     <div class="form-group">
                         <label>Program Description:</label>
-                        <input type="text" name="programDescription">
+                        <input type="text" name="programDescription" required>
                     </div>
-                    <input type="submit" name="submit" value="Upload">
+                    <input type="submit" name="submit" value="Upload" required>
                 </div>
             </form>
         </div>
     </div>
 
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var viewAccount = document.getElementById("view-account");
-            var viewProgram = document.getElementById("view-program");
-            var addProgram = document.getElementById("add-program");
-            var joinedProgram = document.getElementById("joined-member");
-
-            var accountTable = document.getElementById("account-table");
-            var programTable = document.getElementById("program-table");
-            var addingTable = document.getElementById("adding-table");
-            var joinedTable = document.getElementById("joined-table");
-
-            viewAccount.addEventListener("click", function () {
-                accountTable.style.display = "block";
-                programTable.style.display = "none";
-                addingTable.style.display = "none";
-                joinedTable.style.display = "none";
-            });
-
-            viewProgram.addEventListener("click", function () {
-                accountTable.style.display = "none";
-                programTable.style.display = "block";
-                addingTable.style.display = "none";
-                joinedTable.style.display = "none";
-            });
-
-            addProgram.addEventListener("click", function () {
-                accountTable.style.display = "none";
-                programTable.style.display = "none";
-                addingTable.style.display = "block";
-                joinedTable.style.display = "none";
-            });
-
-            joinedProgram.addEventListener("click", function () {
-                accountTable.style.display = "none";
-                programTable.style.display = "none";
-                addingTable.style.display = "none";
-                joinedTable.style.display = "block";
-            });
-
-            var urlParams = new URLSearchParams(window.location.search);
-            var sortListValue = urlParams.get("sort-list");
-
-            if (sortListValue) {
-                accountTable.style.display = "none";
-                programTable.style.display = "none";
-                addingTable.style.display = "none";
-                joinedTable.style.display = "block";
-            }
-        });
-    </script>
+    <script type="module" src="./javascript/DOMContentLoaded.js"></script>
 
 </body>
 
