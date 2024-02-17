@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include 'dbConn.php';
 
 // If file upload form is submitted 
@@ -22,9 +24,10 @@ if (isset($_POST["submit"])) {
             $programDescription = $_POST['programDescription'];
 
             // Insert image content into database 
-            $insert = $connection->query("INSERT into program (image, name, date, time, location, description, created) VALUES ('$imgContent', '$programName', '$programDate', '$programTime', '$programLocation', '$programDescription', NOW())");
+            $insert = "INSERT into program (image, name, date, time, location, description, created) VALUES ('$imgContent', '$programName', '$programDate', '$programTime', '$programLocation', '$programDescription', NOW())";
+            $result = mysqli_query($connection, $insert);
 
-            if ($insert) {
+            if ($result) {
                 $status = 'success';
                 echo '<script>
                 alert("Program added successfully!!");
