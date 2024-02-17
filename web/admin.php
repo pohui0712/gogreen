@@ -36,7 +36,7 @@ session_start();
             ?>
         </div>
         <div id="account-table">
-            <h1>Registered User</h1>
+            <h1>Registered User List:</h1>
             <table>
                 <tr>
                     <th>UserID</th>
@@ -65,7 +65,7 @@ session_start();
 
         </div>
         <div id="program-table">
-            <h1>program</h1>
+            <h1>Program List:</h1>
             <table border="1">
                 <tr>
                     <th>Program ID</th>
@@ -103,7 +103,8 @@ session_start();
             $sortingResult = $connection->query($sortingSQL);
             ?>
             <div>
-                <h3>Select program to view member: </h3>
+
+                <h1>Select program to view member: </h1>
                 <form action="" method="GET" id="sortForm">
                     <select name="sort-list" id="sort-prorgam" onchange="document.getElementById('sortForm').submit()">
                         <option value="default" <?php if (!isset($_GET["sort-list"]) || $_GET["sort-list"] == "default") {
