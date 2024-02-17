@@ -23,7 +23,7 @@ include './php/dbConn.php';
         </div>
         <div id="account-table">
             <h1>Registered User</h1>
-            <table border="1">
+            <table>
                 <tr>
                     <th>UserID</th>
                     <th>Username</th>
