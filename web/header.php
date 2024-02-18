@@ -1,5 +1,6 @@
 <?php
 include './php/dbConn.php';
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@ include './php/dbConn.php';
         <?php include 'index.css'?>
       </style>
   </head>
-  <body id="blur-start">
+  <body>
       <header>
         <nav class="navbar" id="blur-header">
           <a href="home.php" class="logo">
@@ -46,7 +47,7 @@ include './php/dbConn.php';
           if (isset($_SESSION['username'])) {
             echo '
                 <div class="dropdown">
-                  <button id="login-btn">' . $_SESSION['username'] . '</button>
+                  <button id="login-btn-logged-in">' . $_SESSION['username'] . '</button>
                   <div class="dropdown-content" id="profileDropdown">
                     <a href="?logout=true" id="logoutLink">Logout</a>
                   </div>
@@ -142,5 +143,5 @@ include './php/dbConn.php';
         </div>
       </header> 
   </body>
-  <script type="module" src="./javascript/loginPage.js"></script>
+<script type="module" src="./javascript/loginPage.js"></script>
 </html>
