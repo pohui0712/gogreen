@@ -58,6 +58,13 @@ include './php/dbConn.php';
           <form class="login-form" action="./php/signUp.php" method="post">
             <i class="fa-solid fa-xmark" id="close-btn-sign-up"></i>
             <h1>Create Account</h1>
+            <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your email for registration</span>
+
             <input type="text" placeholder="Username" name="signUpName" />
             <input type="email" placeholder="Email" name="signUpEmail" />
             <input type="password" placeholder="Password" name="signUpPassword" />
@@ -77,6 +84,12 @@ include './php/dbConn.php';
         <div class="form-container sign-in-container">
           <form class="login-form" action="./php/signIn.php" method="post">
             <h1>Sign in</h1>
+            <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your account</span>
             <input type="email" placeholder="Email" name="signInEmail" />
             <input type="password" placeholder="Password" name="signInPassword" />
             <button type="submit" value="signIn" name="signInBtn">
