@@ -10,7 +10,7 @@ if(isset($_POST['submitEmail'])) {
         $email = $_POST['email'];
         $message = $_POST['message'];
     
-        $to = 'jiankiat4486@gmail.com';
+        $to = 'receiver@gmail.com';
         $subject = 'New Message from Website';
         $body = "Name: $name\nEmail: $email\n\n$message";
         $headers = "From: $email";
@@ -19,7 +19,7 @@ if(isset($_POST['submitEmail'])) {
             $_SESSION['success_message'] = 'Message sent successfully!';
         }
     }
-    
+
     header("Location: ../home.php");
     exit();
 
