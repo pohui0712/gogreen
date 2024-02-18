@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'dbConn.php';
 
 session_start();
@@ -24,13 +24,13 @@ if (isset($_POST["signInBtn"])) {
             header("Location: ../home.php");
             exit();
         }
-       
+
     } else {
         $_SESSION['signInError'] = "Invalid credentials, please try again";
         header("Location: ../home.php");
         exit();
     }
-   
+
     mysqli_close($connection);
 }
 

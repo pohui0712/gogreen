@@ -13,6 +13,7 @@ session_start();
     <style>
         <?php include 'admin.css' ?>
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <title>Document</title>
 </head>
 
@@ -20,7 +21,7 @@ session_start();
 
     <div class="admin-container">
         <div class="admin-option">
-            <h1>Your Page Title</h1>
+            <h1>Admin Function</h1>
             <h3 id="view-account">View User's Account</h3>
             <h3 id="view-program">View Programs</h3>
             <h3 id="joined-member">View Joined Programs' Member</h3>
@@ -36,7 +37,7 @@ session_start();
             ?>
         </div>
         <div id="account-table">
-            <h1>Registered User</h1>
+            <h1>Registered User List:</h1>
             <table>
                 <tr>
                     <th>UserID</th>
@@ -65,7 +66,7 @@ session_start();
 
         </div>
         <div id="program-table">
-            <h1>program</h1>
+            <h1>Program List:</h1>
             <table border="1">
                 <tr>
                     <th>Program ID</th>
@@ -103,7 +104,8 @@ session_start();
             $sortingResult = $connection->query($sortingSQL);
             ?>
             <div>
-                <h3>Select program to view member: </h3>
+
+                <h1>Select program to view member: </h1>
                 <form action="" method="GET" id="sortForm">
                     <select name="sort-list" id="sort-prorgam" onchange="document.getElementById('sortForm').submit()">
                         <option value="default" <?php if (!isset($_GET["sort-list"]) || $_GET["sort-list"] == "default") {
@@ -200,7 +202,6 @@ session_start();
     </div>
 
     <script type="module" src="./javascript/DOMContentLoaded.js"></script>
-
 </body>
 
 </html>
