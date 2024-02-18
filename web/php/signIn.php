@@ -13,9 +13,7 @@ if (isset($_POST["signInBtn"])) {
 
     if (is_array($login)) {
         $_SESSION['email'] = $login['email'];
-        $_SESSION['password'] = $login['password'];
         $_SESSION['username'] = $login['username'];
-        $_SESSION['donation'] = $login['donation'];
 
         if ($login['email'] == 'daniel@gmail.com') {
             $_SESSION['isAdmin'] = true;
