@@ -13,6 +13,7 @@ session_start();
     <style>
         <?php include 'admin.css' ?>
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <title>Document</title>
 </head>
 
@@ -20,7 +21,7 @@ session_start();
 
     <div class="admin-container">
         <div class="admin-option">
-            <h1>Your Page Title</h1>
+            <h1>Admin Function</h1>
             <h3 id="view-account">View User's Account</h3>
             <h3 id="view-program">View Programs</h3>
             <h3 id="joined-member">View Joined Programs' Member</h3>
@@ -201,7 +202,6 @@ session_start();
     </div>
 
     <script type="module" src="./javascript/DOMContentLoaded.js"></script>
-
 </body>
 
 </html>

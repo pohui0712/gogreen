@@ -16,13 +16,27 @@ body {
   background-color: #f0f0f0;
 }
 
+#logOut {
+  text-decoration: none;
+  background-color: #ff5a5f;
+  color: white;
+  padding: 8px;
+  border: 2px solid black;
+  transition: 0.3s;
+}
+
+#logOut:hover {
+  color: #ff5a5f;
+  background-color: white;
+  transform: translate(0, -3px);
+}
+
 h3 {
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
-h3:hover,
-#logOut:hover {
+h3:hover {
   color: #4caf50; /* Change to your desired hover color */
 }
 #account-table {
@@ -122,9 +136,4 @@ input[type="submit"]:hover {
   gap: 1vw;
   width: 10vw;
   padding: 1vh;
-}
-
-#logOut {
-  text-decoration: none;
-  color: black;
 }
